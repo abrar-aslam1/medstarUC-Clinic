@@ -83,6 +83,8 @@ button { font-family: inherit; cursor: pointer; }
 }
 .ms-nav > ul {
   flex: 1;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 .ms-nav .ms-logo,
@@ -115,6 +117,8 @@ button { font-family: inherit; cursor: pointer; }
   transition: color 0.2s;
   position: relative;
   padding: 6px 0;
+  display: inline-flex;
+  align-items: center;
 }
 .ms-nav ul a:hover { color: var(--ms-red); }
 
