@@ -127,6 +127,55 @@
   </div>
 </section>
 
+<!-- CONTACT FORM -->
+<section class="section paper" id="contact-form">
+  <div class="container" style="max-width: 760px;">
+    <span class="eyebrow">Send a message</span>
+    <h2 style="font-family: var(--display); font-size: clamp(32px, 4vw, 52px); letter-spacing: -0.02em; margin: 12px 0 40px; line-height: 1.05;">Prefer to write it down?</h2>
+
+    <div id="contact-success" style="display: none; padding: 32px; background: var(--ms-blue-soft); border: 1px solid var(--ms-blue); margin-bottom: 32px;">
+      <h3 style="font-family: var(--display); font-size: 24px; margin: 0 0 8px; color: var(--ms-blue-deep);">Got it — thanks.</h3>
+      <p style="color: var(--ink-2); margin: 0;">We'll get back to you within one business day. For faster help, call us at <a href="tel:+19724424700" style="color: var(--ms-blue-deep); font-weight: 600;">(972) 442-4700</a>.</p>
+    </div>
+
+    <form id="contact-form-el" name="contact" method="POST" data-netlify="true" novalidate>
+      <input type="hidden" name="form-name" value="contact">
+      <div class="form-grid">
+        <div class="field">
+          <label for="c-name">Name <span style="color: var(--ms-red);">*</span></label>
+          <input type="text" id="c-name" name="name" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="c-email">Email <span style="color: var(--ms-red);">*</span></label>
+          <input type="email" id="c-email" name="email" placeholder="you@example.com" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="c-phone">Phone</label>
+          <input type="tel" id="c-phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="c-location">Preferred location</label>
+          <select id="c-location" name="location">
+            <option value="">No preference</option>
+            <option value="Murphy">Murphy</option>
+            <option value="Little Elm">Little Elm</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="c-message">Message <span style="color: var(--ms-red);">*</span></label>
+          <textarea id="c-message" name="message" placeholder="How can we help?" required></textarea>
+        </div>
+      </div>
+      <div style="margin-top: 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+        <button type="submit" id="contact-submit" class="btn btn-accent">Send message
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <p style="font-size: 13px; color: var(--ink-soft); margin: 0;">We'll reply within one business day.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
 <!-- EMERGENCY NOTICE -->
 <section class="section dark">
   <div class="container" style="text-align: center; max-width: 720px;">
@@ -200,6 +249,32 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var form = document.getElementById('contact-form-el');
+    var success = document.getElementById('contact-success');
+    var submitBtn = document.getElementById('contact-submit');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      var formData = new FormData(form);
+      fetch('/', { method: 'POST', body: formData })
+        .then(function () {
+          form.style.display = 'none';
+          success.style.display = 'block';
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Send message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
+          alert('Something went wrong. Please try again or call us at (972) 442-4700.');
+        });
+    });
+  })();
+</script>
 <script src="scripts/mobile-nav.js" defer></script>
 </body>
 </html>

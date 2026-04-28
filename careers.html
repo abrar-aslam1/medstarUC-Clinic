@@ -333,7 +333,8 @@
         <p>We'll review your application and get back to you within a few business days. If you don't hear from us, feel free to call (972) 442-4700.</p>
       </div>
 
-      <form id="apply-form" novalidate>
+      <form id="apply-form" name="careers-application" method="POST" enctype="multipart/form-data" data-netlify="true" novalidate>
+        <input type="hidden" name="form-name" value="careers-application">
         <div class="apply-grid">
 
           <div class="field field-wide">
@@ -485,11 +486,24 @@
     });
     var form = document.getElementById('apply-form');
     var success = document.getElementById('apply-success');
+    var submitBtn = form.querySelector('.apply-submit');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      success.classList.add('visible');
-      window.scrollTo({ top: success.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      var formData = new FormData(form);
+      fetch('/', { method: 'POST', body: formData })
+        .then(function () {
+          form.style.display = 'none';
+          success.classList.add('visible');
+          window.scrollTo({ top: success.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send application';
+          alert('Something went wrong. Please try again or call us directly at (972) 442-4700.');
+        });
     });
   })();
 </script>
