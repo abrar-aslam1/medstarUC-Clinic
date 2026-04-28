@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/abraraslam/**)",
+      "Read(//Users/abraraslam/Downloads/**)",
+      "Read(//private/tmp/**)",
+      "Bash(unzip -o \"/Users/abraraslam/Downloads/Medstar Clinic-handoff.zip\" -d medstar-clinic)",
+      "Read(//tmp/**)",
+      "Bash(mkdir -p /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/styles)",
+      "Bash(mkdir -p /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/assets/insurance)",
+      "Bash(mkdir -p /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/assets/locations)",
+      "Bash(mkdir -p /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/assets/providers)",
+      "Bash(cp /tmp/medstar-clinic/medstar-clinic/project/styles/medstar.css /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/styles/medstar.css)",
+      "Bash(cp /tmp/medstar-clinic/medstar-clinic/project/styles/tokens.css /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/styles/tokens.css)",
+      "Bash(cp /tmp/medstar-clinic/medstar-clinic/project/assets/medstar-logo.png /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/assets/medstar-logo.png)",
+      "Bash(cp -r /tmp/medstar-clinic/medstar-clinic/project/assets/insurance/. /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/assets/insurance/)",
+      "Bash(cp -r /tmp/medstar-clinic/medstar-clinic/project/assets/locations/. /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/assets/locations/)",
+      "Bash(cp -r /tmp/medstar-clinic/medstar-clinic/project/assets/providers/. /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/assets/providers/)",
+      "Bash(ls /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/*.html)",
+      "Bash(ls /tmp/medstar-clinic/medstar-clinic/project/*.html)",
+      "Bash(grep -l \"responsive.css\" *.html)",
+      "Bash(grep -l \"mobile-nav.js\" *.html)",
+      "Bash(grep -l 'style=\"background: var\\(--ms-blue-deep\\)' /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/*.html)",
+      "Bash(grep -l 'class=\"ms-topbar\"' /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/*.html)",
+      "Bash(git push *)",
+      "Bash(grep -rn \"<form\" /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/*.html)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "WebFetch(domain:medstaruc.netlify.app)",
+      "Bash(grep -c \"medstar-directions.css\" /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/*.html)",
+      "WebFetch(domain:www.medstaruc.com)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(grep -rl 'href=\"#\" style=\"color: var\\(--mustard\\);\">Patient portal' *.html)",
+      "Bash(xargs sed *)"
+    ]
+  }
+}
