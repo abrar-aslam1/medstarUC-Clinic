@@ -1,0 +1,81 @@
+/* ============================================================
+   MedStar — Responsive overrides
+   Loaded on every page. Covers page-specific layouts whose
+   CSS lives in per-page <style> blocks.
+   ============================================================ */
+
+/* ── 1024px: tablet wide ── */
+@media (max-width: 1024px) {
+  /* Doors section (index.html) */
+  .doors-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* Providers grid (index.html) */
+  .providers-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Testimonials (index.html) */
+  .story-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* Locations (index.html) */
+  .locations-grid { grid-template-columns: 1fr !important; }
+
+  /* svc-intro header on index */
+  .svc-intro { grid-template-columns: 1fr !important; gap: 24px !important; }
+}
+
+/* ── 900px: mobile nav breakpoint ── */
+@media (max-width: 900px) {
+  /* Hero */
+  .hero {
+    min-height: 520px !important;
+    padding: 64px var(--gutter) 80px !important;
+  }
+  .hero-cta {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .hero-aside-call { margin-left: 0 !important; }
+
+  /* Doors */
+  .doors-grid { grid-template-columns: 1fr !important; }
+  .doors-head { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .door { min-height: auto !important; }
+
+  /* Providers */
+  .providers-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Testimonials */
+  .story-grid { grid-template-columns: 1fr !important; }
+
+  /* Locations */
+  .locations-grid { grid-template-columns: 1fr !important; }
+
+  /* Pull quote */
+  .pull-quote { font-size: clamp(28px, 7vw, 48px) !important; }
+
+  /* Topbar — hide on mobile (class added to all pages) */
+  .ms-topbar { display: none !important; }
+}
+
+/* ── 640px: small phones ── */
+@media (max-width: 640px) {
+  .hero {
+    min-height: 400px !important;
+    padding: 48px var(--gutter) 56px !important;
+  }
+
+  /* Providers: single column */
+  .providers-grid { grid-template-columns: 1fr !important; }
+
+  /* Ticker: slow down for readability */
+  .ticker-track { animation-duration: 60s !important; }
+
+  /* Door cards: reduce padding */
+  .door { padding: 36px 24px !important; }
+  .door h3 { font-size: 32px !important; }
+  .door-num { font-size: 56px !important; margin-bottom: 20px !important; }
+
+  /* Loc actions stack */
+  .loc-actions { flex-direction: column !important; }
+  .loc-actions .btn { width: 100%; justify-content: center; }
+}

@@ -1,0 +1,1254 @@
+<!doctype html>
+<html lang="en" data-direction="civic">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MedStar &amp; Co. — Family Urgent Care &amp; Primary Care · Murphy &amp; Little Elm, TX</title>
+<meta name="description" content="Walk-in urgent care and primary care serving Murphy and Little Elm, TX. Open 7 days. Same-day appointments. Most insurances accepted.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/medstar.css">
+<style>
+  /* ============= HERO ============= */
+  .hero {
+    padding: 96px var(--gutter) 120px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 720px;
+    color: var(--paper);
+    background-color: #0F3D75;
+    background-image:
+      linear-gradient(165deg, rgba(27,91,168,0.55) 0%, rgba(15,61,117,0.7) 60%, rgba(10,40,72,0.8) 100%),
+      url("https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1800&q=85");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply, normal;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(100deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0) 80%),
+      radial-gradient(ellipse at 80% 95%, rgba(0,0,0,0.45), transparent 60%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: block;
+    max-width: 980px;
+  }
+  .hero-text {
+    padding-top: 24px;
+    position: relative;
+    color: var(--paper);
+  }
+  .hero-text .lede,
+  .hero-text .hero-headline,
+  .hero-text .eyebrow,
+  .hero-text .status-pill {
+    color: var(--paper);
+  }
+  .hero-text .lede strong { color: var(--paper); }
+  .hero-text .hero-headline em.terra { color: var(--mustard); }
+  .hero-text .u-mark { color: var(--paper); }
+  .hero-aside-call { color: var(--paper); }
+  .hero-aside-call strong { color: var(--paper); }
+  .hero-meta {
+    display: flex; gap: 12px; align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .hero-headline {
+    margin: 24px 0 32px;
+  }
+  .hero-cta {
+    display: flex; gap: 14px; align-items: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .hero-aside-call {
+    margin-left: 8px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+  .hero-aside-call strong {
+    display: block;
+    font-family: var(--display);
+    font-size: 22px;
+    color: var(--ink);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  /* ============= TICKER ============= */
+  .ticker-strip {
+    background: var(--ms-blue-deep);
+    color: var(--paper);
+    padding: 18px var(--gutter);
+    overflow: hidden;
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .ticker-track {
+    display: flex; gap: 64px;
+    animation: scroll 40s linear infinite;
+    white-space: nowrap;
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .ticker-track .star { color: var(--ms-red); margin: 0 16px; }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============= TWO-DOORS SECTION ============= */
+  .doors-wrap {
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .doors-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+  .doors-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .door {
+    background: var(--paper);
+    padding: 56px 44px;
+    position: relative;
+    min-height: 420px;
+    display: flex; flex-direction: column;
+  }
+  .door-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 80px;
+    color: var(--ms-red);
+    line-height: 1;
+    margin-bottom: 32px;
+  }
+  .door h3 {
+    font-family: var(--display);
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .door p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    flex: 1;
+  }
+  .door ul {
+    list-style: none; padding: 0; margin: 24px 0 32px;
+  }
+  .door li {
+    padding: 8px 0;
+    border-top: 1px dashed var(--line);
+    font-size: 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .door li svg { color: var(--ms-blue); flex-shrink: 0; }
+
+  /* ============= SERVICES DIRECTORY ============= */
+  .svc-directory {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .svc-row {
+    --card-bg: #1F5BA8;
+    --card-fg: #FFFFFF;
+    --card-mute: rgba(255,255,255,0.78);
+    display: flex;
+    flex-direction: column;
+    color: var(--card-fg);
+    padding: 32px 30px 30px;
+    position: relative;
+    min-height: 320px;
+    background: var(--card-bg);
+    transition: filter 0.2s ease;
+  }
+  .svc-row:hover { filter: brightness(1.06); }
+  .svc-row:nth-child(1) { --card-bg: #1F5BA8; }
+  .svc-row:nth-child(2) { --card-bg: #133668; }
+  .svc-row:nth-child(3) { --card-bg: #C8332B; }
+  .svc-row:nth-child(4) { --card-bg: #2B4032; }
+  .svc-row-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 90px;
+  }
+  .svc-row-icon {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.85);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--card-fg);
+  }
+  .svc-row-icon svg { width: 22px; height: 22px; }
+  .svc-row-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.6);
+  }
+  .svc-row-head h4 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    color: var(--card-fg);
+    margin: 0 0 12px;
+  }
+  .svc-row-head p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--card-mute);
+    margin: 0 0 18px;
+  }
+  .svc-row-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    white-space: nowrap;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: var(--card-fg);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    padding-bottom: 4px;
+    margin-top: auto;
+    align-self: flex-start;
+    transition: gap 0.2s, border-color 0.2s;
+  }
+  .svc-row-link:hover { gap: 10px; border-bottom-color: var(--card-fg); }
+
+  .svc-intro {
+    max-width: var(--container);
+    margin: 0 auto 36px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: end;
+  }
+  .svc-intro-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    display: block;
+  }
+  .svc-intro h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(56px, 6vw, 88px);
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .svc-intro h2 em {
+    font-style: normal;
+    font-weight: 700;
+    color: var(--ms-red);
+  }
+  .svc-intro-right {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    padding-bottom: 8px;
+  }
+  .svc-intro-right a {
+    display: inline-block;
+    margin-top: 18px;
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+  }
+
+  @media (max-width: 1100px) {
+    .svc-directory { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .svc-directory { grid-template-columns: 1fr; }
+    .svc-intro { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  /* ============= LOCATIONS ============= */
+  .locations-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .loc-card {
+    background: var(--paper);
+    padding: 0;
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .loc-photo {
+    height: 240px;
+    background: linear-gradient(165deg, #0F3D75 0%, #07213E 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .loc-photo.b { background: linear-gradient(165deg, #B0231C 0%, #5C1411 100%); }
+  .loc-photo svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .loc-photo-label {
+    position: absolute;
+    bottom: 16px; left: 20px;
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .loc-body { padding: 28px 32px 32px; }
+  .loc-body h3 {
+    font-family: var(--display);
+    font-size: 32px;
+    margin-bottom: 4px;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+  }
+  .loc-body .addr {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+  .loc-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 20px;
+  }
+  .loc-meta-item h6 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 4px;
+    font-weight: 500;
+  }
+  .loc-meta-item strong {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .loc-meta-item span {
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: block;
+  }
+  .loc-actions {
+    display: flex; gap: 12px;
+  }
+
+  /* ============= EDITORIAL QUOTE ============= */
+  .pull-quote {
+    font-family: var(--display);
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-wrap: balance;
+    font-weight: 700;
+  }
+  .pull-quote em { color: var(--ms-red); font-style: normal; font-weight: 700; }
+  .pull-quote-attr {
+    display: block;
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 32px;
+  }
+
+  /* ============= INSURANCE ============= */
+  .insurance-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-top: 32px;
+  }
+  @media (max-width: 900px) {
+    .insurance-row { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .insurance-row { grid-template-columns: repeat(2, 1fr); }
+  }
+  .ins-cell {
+    background: var(--paper);
+    padding: 32px 20px;
+    text-align: center;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 96px;
+  }
+  .ins-cell img { max-width: 140px; max-height: 56px; width: auto; height: auto; object-fit: contain; }
+  .ins-cell:hover { background: var(--bg-deep); }
+
+  /* ============= PROVIDERS ============= */
+  .providers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .prov-card { text-align: left; }
+  .prov-photo {
+    aspect-ratio: 4/5;
+    background: var(--ms-blue);
+    margin-bottom: 18px;
+    overflow: hidden;
+    position: relative;
+    display: grid; place-items: center;
+    border: 1px solid var(--ms-blue-deep);
+  }
+  .prov-photo.b { background: var(--ms-red); border-color: var(--ms-red-deep); }
+  .prov-photo.c { background: var(--ms-blue-deep); border-color: var(--ms-blue-deep); }
+  .prov-photo.d { background: var(--ink); border-color: var(--ink); }
+  .prov-photo::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(255,255,255,0.15) 0%, transparent 45%),
+      radial-gradient(circle at 80% 90%, rgba(0,0,0,0.25) 0%, transparent 50%);
+  }
+  .prov-headshot {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: contrast(1.02) saturate(0.95);
+  }
+  .prov-photo .prov-id {
+    position: absolute;
+    top: 14px; left: 14px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: rgba(251,247,236,0.92);
+    text-transform: uppercase;
+    z-index: 3;
+    background: rgba(15,23,42,0.55);
+    padding: 5px 9px;
+    backdrop-filter: blur(2px);
+  }
+  .prov-photo .prov-id::before {
+    content: "●";
+    color: var(--mustard);
+    margin-right: 6px;
+  }
+  .prov-name {
+    font-family: var(--display);
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .prov-role { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+  .prov-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .prov-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--ink-2);
+    padding: 4px 8px;
+    background: var(--bg-deep);
+    border-radius: 4px;
+  }
+
+  /* ============= TESTIMONIALS ============= */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .story {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 32px;
+  }
+  .story-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ms-red);
+    margin-bottom: 20px;
+  }
+  .story-q {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+  .story-a { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+  .story-attr {
+    display: flex; align-items: center; gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .story-attr-text { font-size: 12px; color: var(--ink-soft); }
+  .story-attr-text strong {
+    display: block;
+    color: var(--ink);
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  /* ============= CTA STRIP ============= */
+  .cta-strip {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 96px var(--gutter);
+    text-align: center;
+  }
+  .cta-strip h2 {
+    font-family: var(--display);
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+    margin-bottom: 32px;
+    text-wrap: balance;
+  }
+  .cta-strip h2 em { color: var(--mustard); font-style: normal; font-weight: 700; }
+  .cta-strip-actions {
+    display: flex; gap: 16px; justify-content: center;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .cta-strip .btn-primary { background: var(--paper); color: var(--ink); border-radius: 6px; }
+  .cta-strip .btn-primary:hover { background: var(--mustard); color: var(--ink); }
+  .cta-strip .btn-secondary { border-color: var(--paper); color: var(--paper); border-radius: 6px; }
+  .cta-strip .btn-secondary:hover { background: var(--paper); color: var(--ink); }
+  .cta-strip-meta {
+    margin-top: 48px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(251,247,236,0.5);
+    display: flex; justify-content: center; gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  /* SECTION HEAD */
+  .sec-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 48px;
+    max-width: var(--container);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sec-head h2 {
+    font-family: var(--display);
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+    margin-top: 16px;
+  }
+  .sec-head .right {
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 460px;
+    justify-self: end;
+  }
+  .sec-head .right .btn-ghost {
+    margin-top: 16px;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  /* Civic direction overrides for nav CTA */
+  .ms-nav .btn-primary {
+    background: var(--ms-red);
+    color: #FFFFFF;
+    border-radius: 6px;
+  }
+  .ms-nav .btn-primary:hover { background: var(--ms-red-deep); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .doors-head { grid-template-columns: 1fr; }
+    .doors-grid { grid-template-columns: 1fr; }
+    .locations-grid { grid-template-columns: 1fr; }
+    .providers-grid { grid-template-columns: repeat(2, 1fr); }
+    .story-grid { grid-template-columns: 1fr; }
+    .sec-head { grid-template-columns: 1fr; }
+    .sec-head .right { justify-self: start; }
+    .hero { padding: 72px var(--gutter) 80px; min-height: 560px; }
+  }
+  @media (max-width: 600px) {
+    :root { --gutter: 24px; }
+    .providers-grid { grid-template-columns: 1fr; }
+    .loc-meta { grid-template-columns: 1fr 1fr; }
+    .ms-footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+<link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+
+<!-- =========== TOP BAR =========== -->
+<div class="ms-topbar" style="background: var(--ms-blue-deep); color: var(--paper); padding: 8px var(--gutter); font-size: 12px; display: flex; justify-content: space-between; align-items: center; letter-spacing: 0.04em; gap: 24px; flex-wrap: wrap;">
+  <span style="white-space: nowrap;">Murphy &amp; Little Elm, TX · Open 7 days</span>
+  <span style="display:flex; gap: 24px; flex-wrap: wrap; white-space: nowrap;">
+    <span><span style="color: var(--mustard);">●</span> 2 locations open now</span>
+    <a href="#" style="color: var(--mustard);">Patient portal →</a>
+  </span>
+</div>
+
+<!-- =========== NAV =========== -->
+<nav class="ms-nav">
+  <a href="index.html" class="ms-logo"><img src="assets/medstar-logo.png" alt="MedStar Family Care" /></a>
+  <ul>
+    <li class="ms-nav-has-menu">
+      <a href="services.html">Services <span class="ms-caret">▾</span></a>
+      <div class="ms-dropdown">
+        <span class="ms-dropdown-eyebrow">All services</span>
+        <a href="services-urgent.html"><strong>Urgent Care</strong><span>Same-day, walk-in welcome</span></a>
+        <a href="services-primary.html"><strong>Primary Care</strong><span>Annual physicals &amp; ongoing care</span></a>
+        <a href="services-pediatric.html"><strong>Pediatrics</strong><span>Ages 5 and up</span></a>
+        <a href="services-womens.html"><strong>Women's Health</strong><span>Annual wellness, screenings</span></a>
+        <a href="services-mens.html"><strong>Men's Health</strong><span>Direct access, no referrals</span></a>
+        <a href="services-weight.html"><strong>Weight Loss</strong><span>Physician-supervised plans</span></a>
+        <a href="services-virtual.html"><strong>Virtual Visits</strong><span>Telehealth from anywhere</span></a>
+        <a href="services-labs.html"><strong>Labs &amp; X-Ray</strong><span>On-site, same-visit results</span></a>
+      </div>
+    </li>
+    <li class="ms-nav-has-menu">
+      <a href="patient-info.html">Patients <span class="ms-caret">▾</span></a>
+      <div class="ms-dropdown ms-dropdown-narrow">
+        <span class="ms-dropdown-eyebrow">Patient info</span>
+        <a href="patient-info.html#forms"><strong>Forms &amp; intake</strong><span>New patient packet</span></a>
+        <a href="patient-info.html#insurance"><strong>Insurance</strong><span>Plans we accept</span></a>
+        <a href="patient-info.html#billing"><strong>Billing &amp; pay</strong><span>Pay your bill online</span></a>
+        <a href="patient-info.html#portal"><strong>Patient portal</strong><span>Records, messaging, refills</span></a>
+        <a href="patient-info.html#faq"><strong>FAQ</strong><span>Common questions</span></a>
+      </div>
+    </li>
+    <li class="ms-nav-has-menu">
+      <a href="locations.html">Locations <span class="ms-caret">▾</span></a>
+      <div class="ms-dropdown ms-dropdown-narrow">
+        <span class="ms-dropdown-eyebrow">2 locations</span>
+        <a href="location-murphy.html"><strong>Murphy</strong><span>601 E FM 544 #400 · (972) 442-4700</span></a>
+        <a href="location-little-elm.html"><strong>Little Elm</strong><span>2700 FM 423 #200 · (214) 248-8400</span></a>
+      </div>
+    </li>
+    <li><a href="providers.html">Providers</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="careers.html">Careers</a></li>
+  </ul>
+  <div class="ms-nav-right">
+    <a href="tel:+19724424700" class="btn btn-primary">Call (972) 442-4700
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- =========== HERO =========== -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <div class="hero-meta">
+        <span class="eyebrow no-line">Family medicine · Murphy &amp; Little Elm</span>
+      </div>
+
+      <h1 class="display-xl hero-headline">
+        Real <em class="terra">care.</em><br/>
+        Real people.<br/>
+        Right here.
+      </h1>
+
+      <p class="lede">Walk in when something's <strong>wrong.</strong> Schedule when something's <strong>normal.</strong> One clinic, two doors — urgent care &amp; primary care under the same Texas roof, by physicians who know your name.</p>
+
+      <div class="hero-cta" style="margin-top: 36px;">
+        <a href="tel:+19724424700" class="btn btn-accent">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (972) 442-4700
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== TICKER =========== -->
+<div class="ticker-strip">
+  <div class="ticker-track">
+    <span>Open 7 days a week</span><span class="star">✦</span>
+    <span>Most insurances accepted</span><span class="star">✦</span>
+    <span>4.9★ from 600+ neighbors</span><span class="star">✦</span>
+    <span>Pediatric to senior</span><span class="star">✦</span>
+    <span>Same-day appointments</span><span class="star">✦</span>
+    <span>On-site labs &amp; X-ray</span><span class="star">✦</span>
+    <span>Open 7 days a week</span><span class="star">✦</span>
+    <span>Most insurances accepted</span><span class="star">✦</span>
+    <span>4.9★ from 600+ neighbors</span><span class="star">✦</span>
+    <span>Pediatric to senior</span><span class="star">✦</span>
+    <span>Same-day appointments</span><span class="star">✦</span>
+    <span>On-site labs &amp; X-ray</span><span class="star">✦</span>
+  </div>
+</div>
+
+<!-- =========== TWO DOORS =========== -->
+<section class="section">
+  <div class="doors-wrap">
+    <div class="doors-head">
+      <div>
+        <span class="eyebrow">The Hybrid Model</span>
+        <h2 class="display-l" style="margin-top: 18px;">Two doors. <em class="forest">One roof.</em></h2>
+      </div>
+      <div style="font-size: 16px; color: var(--ink-soft); line-height: 1.55; max-width: 440px; justify-self: end;">
+        Walk in for the unexpected. Schedule for the expected. The same physicians work both sides — so the chart you build with us today is the one we open three years from now.
+      </div>
+    </div>
+
+    <div class="doors-grid">
+      <div class="door">
+        <div class="door-num">i.</div>
+        <h3 style="margin-top: 14px;">Urgent Care</h3>
+        <p>Walk in or virtual visit. Murphy 9a–6p weekdays, 9a–5p weekends. Most visits in &lt; 30 minutes.</p>
+        <ul>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Cold, flu, COVID &amp; strep testing
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Sprains, cuts &amp; minor injuries
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            On-site labs, X-ray &amp; EKG
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            School &amp; sports physicals
+          </li>
+        </ul>
+        <div>
+          <a href="services-urgent.html" class="btn btn-primary">Walk in today
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="door" style="background: var(--ms-blue); color: #F0F2F5;">
+        <div class="door-num" style="color: #FFFFFF;">ii.</div>
+        <h3 style="margin-top: 14px; color: #FFFFFF;">Primary Care</h3>
+        <p style="color: rgba(240,242,245,0.85);">Build a relationship with a physician who'll know your kids' birthdays and your chronic-condition history. For all ages.</p>
+        <ul style="border-color: rgba(240,242,245,0.2);">
+          <li style="border-top-color: rgba(240,242,245,0.2); color: #FFFFFF;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Annual physicals &amp; well-child visits
+          </li>
+          <li style="border-top-color: rgba(240,242,245,0.2); color: #FFFFFF;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Diabetes, blood pressure &amp; chronic care
+          </li>
+          <li style="border-top-color: rgba(240,242,245,0.2); color: #FFFFFF;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Women's health &amp; pediatric
+          </li>
+          <li style="border-top-color: rgba(240,242,245,0.2); color: #FFFFFF;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Vaccinations &amp; preventive care
+          </li>
+        </ul>
+        <div>
+          <a href="services-primary.html" class="btn btn-primary" style="background: #FFFFFF; color: var(--ms-blue); border-color: #FFFFFF;">Schedule a visit
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== SERVICES DIRECTORY =========== -->
+<section class="section paper">
+  <div class="svc-intro">
+    <div>
+      <span class="svc-intro-eyebrow">What we treat</span>
+      <h2>The everyday <em>&amp;</em><br/>the unexpected.</h2>
+    </div>
+    <div class="svc-intro-right">
+      We're a full-service family clinic — from your toddler's ear infection to your annual labs, from a sprained ankle on Saturday to managing diabetes for the next decade.
+      <br/><a href="services.html">All services →</a>
+    </div>
+  </div>
+
+  <div class="svc-directory">
+
+    <div class="svc-row">
+      <div class="svc-row-top">
+        <div class="svc-row-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="9" r="5"/>
+            <path d="M12 14v7M9 18h6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="svc-row-num">01</div>
+      </div>
+      <div class="svc-row-head">
+        <h4>Women's Care</h4>
+        <p>Annual exams, contraception, perimenopause &amp; hormone therapy. The kind of conversations that take more than ten minutes.</p>
+      </div>
+      <a href="services-womens.html" class="svc-row-link">Women's care details →</a>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-row-top">
+        <div class="svc-row-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="10" cy="14" r="6"/>
+            <path d="M15 9l5-5M16 4h4v4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="svc-row-num">02</div>
+      </div>
+      <div class="svc-row-head">
+        <h4>Men's Care</h4>
+        <p>Cardiovascular risk, T-levels, prostate screening &amp; the annual you've been putting off. Built for the chronically too-busy.</p>
+      </div>
+      <a href="services-mens.html" class="svc-row-link">Men's care details →</a>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-row-top">
+        <div class="svc-row-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="9" r="3.5"/>
+            <path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="svc-row-num">03</div>
+      </div>
+      <div class="svc-row-head">
+        <h4>Pediatrics</h4>
+        <p>From newborn checks through teen years — well-child visits, sick visits, immunizations, and school &amp; sports physicals.</p>
+      </div>
+      <a href="services-pediatric.html" class="svc-row-link">Pediatric details →</a>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-row-top">
+        <div class="svc-row-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 21V9" stroke-linecap="round"/>
+            <path d="M5 14l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 21h14" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="svc-row-num">04</div>
+      </div>
+      <div class="svc-row-head">
+        <h4>Weight Loss</h4>
+        <p>Physician-supervised plans combining GLP-1 medications when appropriate, nutrition coaching &amp; monthly check-ins.</p>
+      </div>
+      <a href="services-weight.html" class="svc-row-link">Weight loss details →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========== LOCATIONS =========== -->
+<section class="section" style="padding-top: 0;">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Find us</span>
+      <h2>Two locations,<br/><em class="terra">same standards.</em></h2>
+    </div>
+    <div class="right">
+      Both clinics offer the full range of urgent and primary care services. Same providers rotate between locations, so wherever you walk in, you walk into the same standard of care.
+    </div>
+  </div>
+
+  <div class="locations-grid">
+    <div class="loc-card">
+      <div class="loc-photo">
+        <img src="assets/locations/murphy-exterior.jpg" alt="Medstar Urgent Care Murphy storefront" style="width: 100%; height: 100%; object-fit: cover; display: block;"/>
+        <span class="loc-photo-label">Location 01 · Murphy</span>
+      </div>
+      <div class="loc-body">
+        <h3>Murphy</h3>
+        <div class="addr">601 E FM 544, Suite 400 · Murphy, TX 75094</div>
+        <div class="loc-meta">
+          <div class="loc-meta-item">
+            <h6>Mon–Fri</h6>
+            <strong>9a–6p</strong>
+            <span>All services</span>
+          </div>
+          <div class="loc-meta-item">
+            <h6>Sat &amp; Sun</h6>
+            <strong>9a–5p</strong>
+            <span>Open weekends</span>
+          </div>
+          <div class="loc-meta-item">
+            <h6>Phone</h6>
+            <strong>442-4700</strong>
+            <span>(972)</span>
+          </div>
+        </div>
+        <div class="loc-actions">
+          <a href="location-murphy.html" class="btn btn-primary">Visit clinic page
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+19724424700" class="btn btn-secondary">Call (972) 442-4700</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="loc-card">
+      <div class="loc-photo b">
+        <svg viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="240" fill="rgba(176,35,28,0)"/>
+          <path d="M0 80 L600 100" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <path d="M0 140 L600 160" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <path d="M200 0 L220 240" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <path d="M430 0 L450 240" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <path d="M0 70 Q300 60 600 90" stroke="rgba(217,165,61,0.4)" stroke-width="3" fill="none"/>
+          <text x="40" y="50" fill="rgba(255,255,255,0.4)" font-family="JetBrains Mono" font-size="11" letter-spacing="2">FM 423</text>
+          <text x="380" y="50" fill="rgba(255,255,255,0.4)" font-family="JetBrains Mono" font-size="11" letter-spacing="2">ELDORADO PKWY</text>
+          <circle cx="300" cy="120" r="20" fill="rgba(217,165,61,0.3)"/>
+          <circle cx="300" cy="120" r="10" fill="#D9A53D"/>
+          <circle cx="300" cy="120" r="4" fill="#0F1B2D"/>
+        </svg>
+        <span class="loc-photo-label">Location 02 · Little Elm</span>
+      </div>
+      <div class="loc-body">
+        <h3>Little Elm</h3>
+        <div class="addr">2700 FM 423, Suite 200 · Little Elm, TX 75068</div>
+        <div class="loc-meta">
+          <div class="loc-meta-item">
+            <h6>Mon, Wed, Thu</h6>
+            <strong>9a–4p</strong>
+            <span>Tuesday 9a–2p</span>
+          </div>
+          <div class="loc-meta-item">
+            <h6>Fri–Sun</h6>
+            <strong>Closed</strong>
+            <span>See Murphy</span>
+          </div>
+          <div class="loc-meta-item">
+            <h6>Phone</h6>
+            <strong>248-8400</strong>
+            <span>(214)</span>
+          </div>
+        </div>
+        <div class="loc-actions">
+          <a href="location-little-elm.html" class="btn btn-primary">Visit clinic page
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+12142488400" class="btn btn-secondary">Call (214) 248-8400</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== PROVIDERS =========== -->
+<section class="section paper">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Your physicians</span>
+      <h2>Doctors who'll<br/><em class="terra">remember you.</em></h2>
+    </div>
+    <div class="right">
+      Two board-certified family physicians and two physician assistants. We rotate between Murphy and our Little Elm location, so the doctor who treats your strep on Saturday is the same one signing your kid's school physical Monday.
+      <br/><a href="providers.html" class="btn-ghost">Meet the team →</a>
+    </div>
+  </div>
+
+  <div class="providers-grid">
+    <a href="providers.html#qadri" class="prov-card" style="text-decoration: none; color: inherit;">
+      <div class="prov-photo">
+        <span class="prov-id">01 / Family Med</span>
+        <img class="prov-headshot" src="assets/providers/qadri.jpg" alt="Dr. Syeda Qadri" loading="lazy"/>
+      </div>
+      <div class="prov-name">Dr. Syeda Qadri</div>
+      <div class="prov-role">MD · Board-Certified Family Physician</div>
+      <div class="prov-tags">
+        <span class="prov-tag">EN / UR / HI</span>
+        <span class="prov-tag">WOMEN'S</span>
+      </div>
+    </a>
+    <a href="providers.html#imam" class="prov-card" style="text-decoration: none; color: inherit;">
+      <div class="prov-photo b">
+        <span class="prov-id">02 / Family Med</span>
+        <img class="prov-headshot" src="assets/providers/imam.jpeg" alt="Dr. Hassan Imam" loading="lazy"/>
+      </div>
+      <div class="prov-name">Dr. Hassan Imam</div>
+      <div class="prov-role">MD · Board-Certified Family Physician</div>
+      <div class="prov-tags">
+        <span class="prov-tag">EN / UR / PA</span>
+        <span class="prov-tag">URGENT</span>
+      </div>
+    </a>
+    <a href="providers.html#zaidi" class="prov-card" style="text-decoration: none; color: inherit;">
+      <div class="prov-photo c">
+        <span class="prov-id">03 / PA-C</span>
+        <img class="prov-headshot" src="assets/providers/zaidi.jpg" alt="Sarah Zaidi, PA-C" loading="lazy"/>
+      </div>
+      <div class="prov-name">Sarah Zaidi</div>
+      <div class="prov-role">PA-C · Physician Assistant</div>
+      <div class="prov-tags">
+        <span class="prov-tag">URGENT</span>
+        <span class="prov-tag">PRIMARY</span>
+      </div>
+    </a>
+    <a href="providers.html#almahrooq" class="prov-card" style="text-decoration: none; color: inherit;">
+      <div class="prov-photo d">
+        <span class="prov-id">04 / PA-C</span>
+        <img class="prov-headshot" src="assets/providers/almahrooq.jpeg" alt="Subrien Almahrooq, PA-C" loading="lazy"/>
+      </div>
+      <div class="prov-name">Subrien Almahrooq</div>
+      <div class="prov-role">PA-C · Physician Assistant</div>
+      <div class="prov-tags">
+        <span class="prov-tag">EN / AR</span>
+        <span class="prov-tag">URGENT</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- =========== TESTIMONIALS =========== -->
+<section class="section dark">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Testimonials</span>
+      <h2 style="color: var(--paper);">What our<br/><em style="color: var(--mustard); font-style: normal; font-weight: 700;">patients say.</em></h2>
+    </div>
+    <div class="right" style="color: rgba(255,255,255,0.7);">
+      We're proud to have earned glowing reviews from patients who love the quality and care we bring to every appointment. Our reviews reflect the trust and confidence our patients place in us.
+    </div>
+  </div>
+
+  <div class="story-grid">
+    <div class="story" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1);">
+      <div class="story-tag" style="display: flex; align-items: center; gap: 10px;">
+        <span style="color: var(--mustard); letter-spacing: 2px;">★★★★★</span>
+      </div>
+      <p class="story-q" style="color: var(--paper); font-style: italic;">"My experience was wonderful. The entire staff was very helpful and knowledgeable. Very convenient for us and easy to find. I highly recommend them."</p>
+      <div class="story-attr" style="border-color: rgba(255,255,255,0.1);">
+        <div class="story-attr-text" style="color: rgba(255,255,255,0.6);">
+          <strong style="color: var(--paper);">Niel J.</strong>
+          Verified patient review
+        </div>
+      </div>
+    </div>
+
+    <div class="story" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1);">
+      <div class="story-tag" style="display: flex; align-items: center; gap: 10px;">
+        <span style="color: var(--mustard); letter-spacing: 2px;">★★★★★</span>
+      </div>
+      <p class="story-q" style="color: var(--paper); font-style: italic;">"This is an extremely professional and pleasant medical practice to deal with. They have a great bedside manner and seem to really be focused on helping the patient."</p>
+      <div class="story-attr" style="border-color: rgba(255,255,255,0.1);">
+        <div class="story-attr-text" style="color: rgba(255,255,255,0.6);">
+          <strong style="color: var(--paper);">Clovis S.</strong>
+          Verified patient review
+        </div>
+      </div>
+    </div>
+
+    <div class="story" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1);">
+      <div class="story-tag" style="display: flex; align-items: center; gap: 10px;">
+        <span style="color: var(--mustard); letter-spacing: 2px;">★★★★★</span>
+      </div>
+      <p class="story-q" style="color: var(--paper); font-style: italic;">"Definitely would recommend this Urgent Care facility. Staff is very professional and efficient. Doctor is knowledgeable and has a caring bedside manner."</p>
+      <div class="story-attr" style="border-color: rgba(255,255,255,0.1);">
+        <div class="story-attr-text" style="color: rgba(255,255,255,0.6);">
+          <strong style="color: var(--paper);">Samantha P.</strong>
+          Verified patient review
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== INSURANCE =========== -->
+<section class="section">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Insurance &amp; payment</span>
+      <h2>We probably <em class="terra">take yours.</em></h2>
+    </div>
+    <div class="right">
+      We accept 16+ insurance plans, including all major carriers in Texas. Self-pay rates start at $99 for an urgent visit, $159 for primary. No surprises.
+      <br/><a href="patient-info.html#insurance" class="btn-ghost">Full list &amp; check yours →</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="insurance-row">
+      <div class="ins-cell"><img src="assets/insurance/aetna.webp" alt="Aetna" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/bcbs.webp" alt="BlueCross BlueShield" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/united-healthcare.webp" alt="UnitedHealthcare" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/cigna.webp" alt="Cigna" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/humana.webp" alt="Humana" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/tricare.webp" alt="TRICARE" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/ambetter.webp" alt="Ambetter" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/molina.webp" alt="Molina Healthcare" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/baylor-scott-white.webp" alt="Baylor Scott &amp; White Health" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/wellcare.webp" alt="WellCare Health Plans" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/healthsmart.png" alt="HealthSmart" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/all-savers.webp" alt="All Savers Insurance" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/coventry.webp" alt="Coventry Health Care" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/bright-health.webp" alt="Bright Health" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/friday.webp" alt="Friday Health Plans" loading="lazy"/></div>
+      <div class="ins-cell"><img src="assets/insurance/phcs.webp" alt="PHCS" loading="lazy"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== CTA =========== -->
+<section class="cta-strip">
+  <div class="container">
+    <span class="eyebrow no-line" style="color: var(--mustard); justify-content: center; display: inline-flex;">Ready when you are</span>
+    <h2 style="margin-top: 16px;">Whatever's<br/>going on — <em>start here.</em></h2>
+    <div class="cta-strip-actions">
+      <a href="tel:+19724424700" class="btn btn-primary">Call (972) 442-4700
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a href="locations.html" class="btn btn-secondary">Walk-in info</a>
+    </div>
+    <div class="cta-strip-meta">
+      <span>● Open now</span>
+      <span>~7 min wait at Murphy</span>
+      <span>~22 min at Little Elm</span>
+      <span>Most insurances accepted</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========== FOOTER =========== -->
+<footer class="ms-footer">
+  <div class="ms-footer-grid">
+    <div>
+      <div class="ms-logo" style="margin-bottom: 16px;">
+        <img src="assets/medstar-logo.png" alt="MedStar Family Care" style="height: 64px; filter: brightness(1.1) drop-shadow(0 0 0.5px rgba(255,255,255,0.3));"/>
+      </div>
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.5; max-width: 280px;">
+        Family-owned urgent &amp; primary care, serving Murphy, Little Elm, and the rest of North Texas since 2014.
+      </p>
+      <div style="margin-top: 24px; display: flex; gap: 12px;">
+        <a href="#" aria-label="Facebook" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: grid; place-items: center; color: rgba(255,255,255,0.7); font-size: 13px;">f</a>
+        <a href="#" aria-label="Instagram" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: grid; place-items: center; color: rgba(255,255,255,0.7); font-size: 13px;">ig</a>
+        <a href="#" aria-label="LinkedIn" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: grid; place-items: center; color: rgba(255,255,255,0.7); font-size: 13px;">in</a>
+      </div>
+    </div>
+    <div>
+      <h4>Care</h4>
+      <ul>
+        <li><a href="services-urgent.html">Urgent Care</a></li>
+        <li><a href="services-primary.html">Primary Care</a></li>
+        <li><a href="services-pediatric.html">Pediatrics</a></li>
+        <li><a href="services-womens.html">Women's Health</a></li>
+        <li><a href="services-virtual.html">Virtual Visits</a></li>
+        <li><a href="services-labs.html">Labs &amp; X-Ray</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="patient-info.html">Forms &amp; intake</a></li>
+        <li><a href="patient-info.html#insurance">Insurance</a></li>
+        <li><a href="patient-info.html#billing">Billing &amp; pay</a></li>
+        <li><a href="patient-info.html#portal">Patient portal</a></li>
+        <li><a href="patient-info.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About</h4>
+      <ul>
+        <li><a href="about.html">Our story</a></li>
+        <li><a href="providers.html">Providers</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit us</h4>
+      <ul style="font-family: var(--display); font-size: 17px; line-height: 1.4; letter-spacing: -0.01em;">
+        <li style="margin-bottom: 18px;">
+          <strong style="color: var(--paper); font-weight: 700;">Murphy</strong><br/>
+          <span style="font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,0.6);">601 E FM 544 #400<br/>(972) 442-4700</span>
+        </li>
+        <li>
+          <strong style="color: var(--paper); font-weight: 700;">Little Elm</strong><br/>
+          <span style="font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,0.6);">2700 FM 423 #200<br/>(214) 248-8400</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="ms-footer-bottom">
+    <span>© 2026 MedStar &amp; Co. · TX Lic. #M44892</span>
+    <span style="display: flex; gap: 24px;">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">HIPAA</a>
+      <a href="#">Notices</a>
+    </span>
+  </div>
+</footer>
+
+<script src="scripts/mobile-nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en" data-direction="civic">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers — MedStar &amp; Co. Family Care</title>
+<meta name="description" content="Join the MedStar team in Murphy or Little Elm, TX. Family-owned clinic — no corporate layer. Real visit lengths, predictable hours, room to grow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/medstar.css">
+<link rel="stylesheet" href="styles/medstar-pages.css">
+<style>
+  .ms-nav .btn-primary { background: var(--ms-red); color: #FFFFFF; border-radius: 6px; }
+  .ms-nav .btn-primary:hover { background: var(--ms-red-deep); }
+
+  /* APPLICATION FORM */
+  .apply-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 56px clamp(28px, 5vw, 64px) 48px;
+  }
+  .apply-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 32px;
+  }
+  .apply-grid .field-wide { grid-column: 1 / -1; }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .field label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .field label .req { color: var(--ms-red); margin-left: 4px; }
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="tel"],
+  .field textarea {
+    font-family: var(--display);
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    background: transparent;
+    border: 0;
+    border-bottom: 1.5px solid var(--ink);
+    padding: 8px 0 10px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.15s ease;
+  }
+  .field input:focus,
+  .field textarea:focus { border-color: var(--ms-red); }
+  .field textarea {
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    min-height: 140px;
+    resize: vertical;
+  }
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: var(--ink-muted);
+    font-style: italic;
+  }
+  .upload {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px;
+    border: 1.5px dashed var(--line-strong);
+    background: rgba(0,0,0,0.015);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .upload:hover { background: rgba(0,0,0,0.04); border-color: var(--ms-red); }
+  .upload-left {
+    display: flex; align-items: center; gap: 14px;
+    min-width: 0;
+  }
+  .upload-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .upload-text {
+    display: flex; flex-direction: column; min-width: 0;
+  }
+  .upload-text strong {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .upload-text span {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  .upload-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    color: var(--ink);
+    flex-shrink: 0;
+  }
+  .upload input[type="file"] { display: none; }
+  .apply-actions {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .apply-actions p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 380px;
+  }
+  .apply-submit {
+    background: var(--ms-red);
+    color: var(--paper);
+    border: 0;
+    padding: 18px 32px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.15s ease;
+  }
+  .apply-submit:hover { background: var(--ms-red-deep); }
+  .apply-success {
+    display: none;
+    padding: 56px 32px;
+    text-align: center;
+  }
+  .apply-success.visible { display: block; }
+  .apply-success.visible + form { display: none; }
+  .apply-success h3 {
+    font-family: var(--display);
+    font-size: 36px;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+  }
+  .apply-success p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  @media (max-width: 720px) {
+    .apply-grid { grid-template-columns: 1fr; }
+    .apply-wrap { padding: 40px 24px 36px; }
+  }
+</style>
+<link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="ms-topbar" style="background: var(--ms-blue-deep); color: var(--paper); padding: 8px var(--gutter); font-size: 12px; display: flex; justify-content: space-between; align-items: center; letter-spacing: 0.04em; gap: 24px; flex-wrap: wrap;">
+  <span style="white-space: nowrap;">Murphy &amp; Little Elm, TX · Open 7 days</span>
+  <span style="display:flex; gap: 24px; flex-wrap: wrap; white-space: nowrap;">
+    <span><span style="color: var(--mustard);">●</span> 2 locations open now</span>
+    <a href="#" style="color: var(--mustard);">Patient portal →</a>
+  </span>
+</div>
+
+<!-- NAV -->
+<nav class="ms-nav">
+  <a href="index.html" class="ms-logo"><img src="assets/medstar-logo.png" alt="MedStar Family Care" /></a>
+  <ul>
+    <li class="ms-nav-has-menu">
+      <a href="services.html">Services <span class="ms-caret">▾</span></a>
+      <div class="ms-dropdown">
+        <span class="ms-dropdown-eyebrow">All services</span>
+        <a href="services-urgent.html"><strong>Urgent Care</strong><span>Same-day, walk-in welcome</span></a>
+        <a href="services-primary.html"><strong>Primary Care</strong><span>Annual physicals &amp; ongoing care</span></a>
+        <a href="services-pediatric.html"><strong>Pediatrics</strong><span>Ages 5 and up</span></a>
+        <a href="services-womens.html"><strong>Women's Health</strong><span>Annual wellness, screenings</span></a>
+        <a href="services-mens.html"><strong>Men's Health</strong><span>Direct access, no referrals</span></a>
+        <a href="services-weight.html"><strong>Weight Loss</strong><span>Physician-supervised plans</span></a>
+        <a href="services-virtual.html"><strong>Virtual Visits</strong><span>Telehealth from anywhere</span></a>
+        <a href="services-labs.html"><strong>Labs &amp; X-Ray</strong><span>On-site, same-visit results</span></a>
+      </div>
+    </li>
+    <li class="ms-nav-has-menu">
+      <a href="patient-info.html">Patients <span class="ms-caret">▾</span></a>
+      <div class="ms-dropdown ms-dropdown-narrow">
+        <span class="ms-dropdown-eyebrow">Patient info</span>
+        <a href="patient-info.html#forms"><strong>Forms &amp; intake</strong><span>New patient packet</span></a>
+        <a href="patient-info.html#insurance"><strong>Insurance</strong><span>Plans we accept</span></a>
+        <a href="patient-info.html#billing"><strong>Billing &amp; pay</strong><span>Pay your bill online</span></a>
+        <a href="patient-info.html#portal"><strong>Patient portal</strong><span>Records, messaging, refills</span></a>
+        <a href="patient-info.html#faq"><strong>FAQ</strong><span>Common questions</span></a>
+      </div>
+    </li>
+    <li class="ms-nav-has-menu">
+      <a href="locations.html">Locations <span class="ms-caret">▾</span></a>
+      <div class="ms-dropdown ms-dropdown-narrow">
+        <span class="ms-dropdown-eyebrow">2 locations</span>
+        <a href="location-murphy.html"><strong>Murphy</strong><span>601 E FM 544 #400 · (972) 442-4700</span></a>
+        <a href="location-little-elm.html"><strong>Little Elm</strong><span>2700 FM 423 #200 · (214) 248-8400</span></a>
+      </div>
+    </li>
+    <li><a href="providers.html">Providers</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="careers.html">Careers</a></li>
+  </ul>
+  <div class="ms-nav-right">
+    <a href="tel:+19724424700" class="btn btn-primary">Call (972) 442-4700
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-head">
+  <div class="page-head-grid">
+    <div>
+      <div class="crumbs"><a href="index.html">Home</a> · Careers</div>
+      <span class="eyebrow">Join our team</span>
+      <h1>Practice medicine the way it<br/><em class="terra">should be practiced.</em></h1>
+    </div>
+    <p class="lede">We're a family-owned clinic — not a hospital system, not private equity. Our doctors set the schedule, our staff knows every patient by name, and decisions get made by people who actually see patients.</p>
+  </div>
+  <div class="stat-row" style="max-width: var(--container); margin: 56px auto 0;">
+    <div class="stat-cell"><h6>Locations</h6><strong>Murphy &amp; Little Elm</strong><span>North Texas</span></div>
+    <div class="stat-cell"><h6>Patient panel</h6><strong>Manageable</strong><span>Real time per visit</span></div>
+    <div class="stat-cell"><h6>Schedule</h6><strong>Mon–Fri</strong><span>No overnight call</span></div>
+    <div class="stat-cell"><h6>Hiring</h6><strong>Year-round</strong><span>Always open to talent</span></div>
+  </div>
+</header>
+
+<!-- WHY WORK HERE -->
+<section class="section paper">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Why work here</span>
+      <h2>The basics, <em class="terra">done right.</em></h2>
+    </div>
+    <p class="right">We pay competitively, offer health benefits from day one, and protect your time off. The rest of what makes us different is harder to put in a benefits brochure — but it's the reason most of our team has stayed for years.</p>
+  </div>
+  <div class="container">
+    <div class="services-grid" style="grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+      <div class="service-tile" style="min-height: 240px; cursor: default;">
+        <span class="tile-num">01 / TIME</span>
+        <h4 style="font-size: 26px; margin-top: 16px;">Real visit lengths</h4>
+        <p style="font-size: 15px;">15-minute slots are not a target here. New-patient primary visits are 40 minutes. Chronic-care follow-ups are 25. You'll have time to actually listen.</p>
+      </div>
+
+      <div class="service-tile" style="min-height: 240px; cursor: default;">
+        <span class="tile-num">02 / TEAM</span>
+        <h4 style="font-size: 26px; margin-top: 16px;">No corporate layer</h4>
+        <p style="font-size: 15px;">No regional VP. No quarterly RVU pressure. Decisions about care, staffing, and scheduling get made in the building, by people who see patients themselves.</p>
+      </div>
+
+      <div class="service-tile" style="min-height: 240px; cursor: default;">
+        <span class="tile-num">03 / GROWTH</span>
+        <h4 style="font-size: 26px; margin-top: 16px;">Room to grow</h4>
+        <p style="font-size: 15px;">CME budget, conference time, and mentorship from senior physicians. We support certifications, fellowships, and clinical interests outside of bread-and-butter primary care.</p>
+      </div>
+
+      <div class="service-tile" style="min-height: 240px; cursor: default;">
+        <span class="tile-num">04 / BENEFITS</span>
+        <h4 style="font-size: 26px; margin-top: 16px;">Health, dental, vision</h4>
+        <p style="font-size: 15px;">Full medical, dental, and vision from day one. 401(k) with match. Malpractice fully covered for clinicians. Discounted care for immediate family.</p>
+      </div>
+
+      <div class="service-tile" style="min-height: 240px; cursor: default;">
+        <span class="tile-num">05 / SCHEDULE</span>
+        <h4 style="font-size: 26px; margin-top: 16px;">Predictable hours</h4>
+        <p style="font-size: 15px;">Clinic hours are Monday–Friday with rotating Saturday mornings. No overnight call. PTO that actually gets taken — we cover for each other.</p>
+      </div>
+
+      <div class="service-tile" style="min-height: 240px; cursor: default;">
+        <span class="tile-num">06 / CULTURE</span>
+        <h4 style="font-size: 26px; margin-top: 16px;">A clinic, not a chain</h4>
+        <p style="font-size: 15px;">We eat lunch together. We know each other's kids' names. New hires get a real onboarding, not a slide deck. The waiting-room plants are alive.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="section">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Apply</span>
+      <h2>Tell us about <em class="terra">yourself.</em></h2>
+    </div>
+    <p class="right">Send your details and a current CV. We read every application — our practice manager will reach out within a few business days. Prefer to talk first? Call <a href="tel:+19724424700" style="color: var(--ms-red); text-decoration: underline; text-underline-offset: 3px;">(972) 442-4700</a>.</p>
+  </div>
+
+  <div class="container">
+    <div class="apply-wrap">
+
+      <div class="apply-success" id="apply-success">
+        <h3>Thanks — we got it.</h3>
+        <p>We'll review your application and get back to you within a few business days. If you don't hear from us, feel free to call (972) 442-4700.</p>
+      </div>
+
+      <form id="apply-form" novalidate>
+        <div class="apply-grid">
+
+          <div class="field field-wide">
+            <label for="full-name">Full name <span class="req">*</span></label>
+            <input type="text" id="full-name" name="fullName" placeholder="Your full legal name" required autocomplete="name"/>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email"/>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required autocomplete="tel"/>
+          </div>
+
+          <div class="field field-wide">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Role you're interested in, location preference, when you can start, anything else we should know."></textarea>
+          </div>
+
+          <div class="field field-wide">
+            <label for="resume">Resume / CV <span class="req">*</span></label>
+            <label class="upload" for="resume">
+              <span class="upload-left">
+                <span class="upload-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="12" y1="18" x2="12" y2="12"/>
+                    <polyline points="9 15 12 12 15 15"/>
+                  </svg>
+                </span>
+                <span class="upload-text">
+                  <strong id="upload-name">Upload your file</strong>
+                  <span id="upload-hint">PDF, DOC or DOCX · Up to 10MB</span>
+                </span>
+              </span>
+              <span class="upload-pill">Choose file</span>
+              <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required/>
+            </label>
+          </div>
+
+        </div>
+
+        <div class="apply-actions">
+          <p>By submitting, you confirm the information is accurate. We'll only use your CV for hiring purposes and won't share it with third parties.</p>
+          <button type="submit" class="apply-submit">
+            Send application
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- DARK CTA -->
+<section class="section dark">
+  <div class="container" style="text-align: center;">
+    <span class="eyebrow no-line" style="color: rgba(251,247,236,0.6); justify-content: center; display: inline-flex;">Questions before you apply?</span>
+    <h2 class="display-l" style="color: var(--paper); margin-top: 16px;">Talk to <em style="color: var(--mustard); font-style: normal; font-weight: 700;">a real person.</em></h2>
+    <p class="lede" style="color: rgba(251,247,236,0.7); margin: 24px auto 32px;">Our practice manager picks up the phone. Ask about call schedules, panel size, what a typical day looks like, anything.</p>
+    <a href="tel:+19724424700" class="btn btn-accent" style="background: var(--mustard); color: var(--ink);">Call (972) 442-4700</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ms-footer">
+  <div class="ms-footer-grid">
+    <div>
+      <div class="ms-logo" style="margin-bottom: 16px;">
+        <img src="assets/medstar-logo.png" alt="MedStar Family Care" style="height: 64px; filter: brightness(1.1) drop-shadow(0 0 0.5px rgba(255,255,255,0.3));"/>
+      </div>
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.5; max-width: 280px;">Family-owned urgent &amp; primary care, serving Murphy, Little Elm, and the rest of North Texas since 2014.</p>
+    </div>
+    <div>
+      <h4>Care</h4>
+      <ul>
+        <li><a href="services-urgent.html">Urgent Care</a></li>
+        <li><a href="services-primary.html">Primary Care</a></li>
+        <li><a href="services-pediatric.html">Pediatrics</a></li>
+        <li><a href="services-womens.html">Women's Health</a></li>
+        <li><a href="services-virtual.html">Virtual Visits</a></li>
+        <li><a href="services-labs.html">Labs &amp; X-Ray</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="patient-info.html">Forms &amp; intake</a></li>
+        <li><a href="patient-info.html#insurance">Insurance</a></li>
+        <li><a href="patient-info.html#billing">Billing &amp; pay</a></li>
+        <li><a href="patient-info.html#portal">Patient portal</a></li>
+        <li><a href="patient-info.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About</h4>
+      <ul>
+        <li><a href="about.html">Our story</a></li>
+        <li><a href="providers.html">Providers</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit us</h4>
+      <ul style="font-family: var(--display); font-size: 17px; line-height: 1.4; letter-spacing: -0.01em;">
+        <li style="margin-bottom: 18px;">
+          <strong style="color: var(--paper); font-weight: 700;">Murphy</strong><br/>
+          <span style="font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,0.6);">601 E FM 544 #400<br/>(972) 442-4700</span>
+        </li>
+        <li>
+          <strong style="color: var(--paper); font-weight: 700;">Little Elm</strong><br/>
+          <span style="font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,0.6);">2700 FM 423 #200<br/>(214) 248-8400</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="ms-footer-bottom">
+    <span>© 2026 MedStar &amp; Co. · TX Lic. #M44892</span>
+    <span style="display: flex; gap: 24px;">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">HIPAA</a>
+      <a href="#">Notices</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var input = document.getElementById('resume');
+    var nameEl = document.getElementById('upload-name');
+    var hintEl = document.getElementById('upload-hint');
+    if (!input) return;
+    input.addEventListener('change', function () {
+      var f = input.files && input.files[0];
+      if (!f) return;
+      nameEl.textContent = f.name;
+      var kb = f.size / 1024;
+      var sizeStr = kb > 1024 ? (kb / 1024).toFixed(1) + ' MB' : Math.round(kb) + ' KB';
+      hintEl.textContent = 'Selected · ' + sizeStr;
+    });
+    var form = document.getElementById('apply-form');
+    var success = document.getElementById('apply-success');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      success.classList.add('visible');
+      window.scrollTo({ top: success.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+    });
+  })();
+</script>
+
+<script src="scripts/mobile-nav.js" defer></script>
+</body>
+</html>

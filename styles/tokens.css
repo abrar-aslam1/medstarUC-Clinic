@@ -1,0 +1,47 @@
+/* Shared tokens for all three directions */
+
+/* Direction A — Trust & Calm */
+.dir-a {
+  --a-bg: #F4F1EB;
+  --a-surface: #FFFFFF;
+  --a-ink: #1A2B2A;
+  --a-ink-soft: #5A6968;
+  --a-accent: #2F6B5E;        /* deep sage */
+  --a-accent-soft: #DCE8E2;
+  --a-coral: #E8856B;
+  --a-line: rgba(26, 43, 42, 0.12);
+  --a-serif: "Fraunces", "Georgia", serif;
+  --a-sans: "Inter", system-ui, sans-serif;
+}
+
+/* Direction B — Always On (utility) */
+.dir-b {
+  --b-bg: #0B1220;
+  --b-surface: #131C2E;
+  --b-surface-2: #1B2840;
+  --b-ink: #E8EEF7;
+  --b-ink-soft: #95A3BC;
+  --b-accent: #C6F24E;         /* electric lime */
+  --b-accent-2: #FF7A59;       /* coral */
+  --b-line: rgba(255,255,255,0.08);
+  --b-good: #4ADE80;
+  --b-mono: "JetBrains Mono", ui-monospace, monospace;
+  --b-sans: "Geist", "Inter", system-ui, sans-serif;
+}
+
+/* Direction C — Neighborhood */
+.dir-c {
+  --c-bg: #F2EBDD;
+  --c-paper: #FBF6EA;
+  --c-ink: #2B1F17;
+  --c-ink-soft: #6B5A4A;
+  --c-terracotta: #C7593A;
+  --c-forest: #2C4A36;
+  --c-mustard: #D4A547;
+  --c-line: #2B1F17;
+  --c-display: "DM Serif Display", "Playfair Display", serif;
+  --c-script: "Caveat", cursive;
+  --c-sans: "Sora", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }

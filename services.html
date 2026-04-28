@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" data-direction="civic">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — MedStar &amp; Co. Family Care</title>
+<meta name="description" content="MedStar Family Care offers urgent care, primary care, pediatrics, women's health, men's health, weight loss, virtual visits, and labs & X-ray in Murphy and Little Elm, TX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/medstar.css">
+<link rel="stylesheet" href="styles/medstar-pages.css">
+<style>
+  .ms-nav .btn-primary { background: var(--ms-red); color: #FFFFFF; border-radius: 6px; }
+  .ms-nav .btn-primary:hover { background: var(--ms-red-deep); }
+</style>
+<link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="ms-topbar" style="background: var(--ms-blue-deep); color: var(--paper); padding: 8px var(--gutter); font-size: 12px; display: flex; justify-content: space-between; align-items: center; letter-spacing: 0.04em; gap: 24px; flex-wrap: wrap;">
+  <span style="white-space: nowrap;">Murphy &amp; Little Elm, TX · Open 7 days</span>
+  <span style="display:flex; gap: 24px; flex-wrap: wrap; white-space: nowrap;">
+    <span><span style="color: var(--mustard);">●</span> 2 locations open now</span>
+    <a href="#" style="color: var(--mustard);">Patient portal →</a>
+  </span>
+</div>
+
+<!-- NAV -->
+<nav class="ms-nav">
+  <a href="index.html" class="ms-logo"><img src="assets/medstar-logo.png" alt="MedStar Family Care" /></a>
+  <ul>
+    <li class="ms-nav-has-menu">
+      <a href="services.html">Services <span class="ms-caret">▾</span></a>
+      <div class="ms-dropdown">
+        <span class="ms-dropdown-eyebrow">All services</span>
+        <a href="services-urgent.html"><strong>Urgent Care</strong><span>Same-day, walk-in welcome</span></a>
+        <a href="services-primary.html"><strong>Primary Care</strong><span>Annual physicals &amp; ongoing care</span></a>
+        <a href="services-pediatric.html"><strong>Pediatrics</strong><span>Ages 5 and up</span></a>
+        <a href="services-womens.html"><strong>Women's Health</strong><span>Annual wellness, screenings</span></a>
+        <a href="services-mens.html"><strong>Men's Health</strong><span>Direct access, no referrals</span></a>
+        <a href="services-weight.html"><strong>Weight Loss</strong><span>Physician-supervised plans</span></a>
+        <a href="services-virtual.html"><strong>Virtual Visits</strong><span>Telehealth from anywhere</span></a>
+        <a href="services-labs.html"><strong>Labs &amp; X-Ray</strong><span>On-site, same-visit results</span></a>
+      </div>
+    </li>
+    <li class="ms-nav-has-menu">
+      <a href="patient-info.html">Patients <span class="ms-caret">▾</span></a>
+      <div class="ms-dropdown ms-dropdown-narrow">
+        <span class="ms-dropdown-eyebrow">Patient info</span>
+        <a href="patient-info.html#forms"><strong>Forms &amp; intake</strong><span>New patient packet</span></a>
+        <a href="patient-info.html#insurance"><strong>Insurance</strong><span>Plans we accept</span></a>
+        <a href="patient-info.html#billing"><strong>Billing &amp; pay</strong><span>Pay your bill online</span></a>
+        <a href="patient-info.html#portal"><strong>Patient portal</strong><span>Records, messaging, refills</span></a>
+        <a href="patient-info.html#faq"><strong>FAQ</strong><span>Common questions</span></a>
+      </div>
+    </li>
+    <li class="ms-nav-has-menu">
+      <a href="locations.html">Locations <span class="ms-caret">▾</span></a>
+      <div class="ms-dropdown ms-dropdown-narrow">
+        <span class="ms-dropdown-eyebrow">2 locations</span>
+        <a href="location-murphy.html"><strong>Murphy</strong><span>601 E FM 544 #400 · (972) 442-4700</span></a>
+        <a href="location-little-elm.html"><strong>Little Elm</strong><span>2700 FM 423 #200 · (214) 248-8400</span></a>
+      </div>
+    </li>
+    <li><a href="providers.html">Providers</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="careers.html">Careers</a></li>
+  </ul>
+  <div class="ms-nav-right">
+    <a href="tel:+19724424700" class="btn btn-primary">Call (972) 442-4700
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-head">
+  <div class="page-head-grid">
+    <div>
+      <div class="crumbs"><a href="index.html">Home</a> · Services</div>
+      <span class="eyebrow">What we treat</span>
+      <h1>Care across the <em class="terra">whole family,</em><br/>across the whole life.</h1>
+    </div>
+    <p class="lede">From the unexpected (sprained ankle on Saturday) to the expected (annual labs, school physicals, A1c management). Six service lines, two locations, one team that knows your name.</p>
+  </div>
+  <div class="stat-row" style="max-width: var(--container); margin: 56px auto 0;">
+    <div class="stat-cell"><h6>Service lines</h6><strong><em>06</em></strong><span>Urgent, primary, peds, women's, labs, virtual</span></div>
+    <div class="stat-cell"><h6>Open hours</h6><strong>7 days at Murphy</strong><span>Murphy 9a–6p weekdays · 9a–5p weekends · Little Elm M, T, W, Th</span></div>
+    <div class="stat-cell"><h6>Avg visit</h6><strong>27 min</strong><span>Door to discharge</span></div>
+    <div class="stat-cell"><h6>Patients / year</h6><strong>34k+</strong><span>Across both locations</span></div>
+  </div>
+</header>
+
+<!-- SERVICES GRID -->
+<section class="section">
+  <div class="container">
+    <div class="services-grid" style="grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+      <a href="services-urgent.html" class="service-tile" style="min-height: 320px;">
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg>
+          <span class="tile-num">01 / SAME-DAY</span>
+        </div>
+        <h4 style="font-size: 36px; margin-top: 16px;">Urgent Care</h4>
+        <p style="font-size: 16px;">Walk in for cold, flu, strep, COVID, sprains, cuts, allergic reactions, UTIs, school &amp; sports physicals. On-site labs &amp; X-ray. No appointment required.</p>
+        <div class="tag-list" style="margin-bottom: 16px;">
+          <span class="tag">FLU/STREP</span><span class="tag">X-RAY</span><span class="tag">STITCHES</span><span class="tag">PHYSICALS</span>
+        </div>
+        <span class="arrow">Explore urgent care →</span>
+      </a>
+
+      <a href="services-primary.html" class="service-tile" style="min-height: 320px;">
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8z"/><path d="M12 7v5l3 2"/></svg>
+          <span class="tile-num">02 / RELATIONSHIP</span>
+        </div>
+        <h4 style="font-size: 36px; margin-top: 16px;">Primary Care</h4>
+        <p style="font-size: 16px;">Build a relationship with a physician who knows your history. Annual physicals, chronic disease management, preventive care, immunizations, and referrals.</p>
+        <div class="tag-list" style="margin-bottom: 16px;">
+          <span class="tag">A1C/BP</span><span class="tag">PHYSICALS</span><span class="tag">VAX</span><span class="tag">REFERRALS</span>
+        </div>
+        <span class="arrow">Explore primary care →</span>
+      </a>
+
+      <a href="services-pediatric.html" class="service-tile">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="5"/><path d="M5 22c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+        <h4>Pediatrics</h4>
+        <p>Ages 5 and up. Well-child, sick visits, immunizations, school forms, sports physicals.</p>
+        <span class="arrow">Ages 5 → 18 →</span>
+      </a>
+
+      <a href="services-womens.html" class="service-tile">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="6"/><path d="M12 15v7M9 19h6"/></svg>
+        <h4>Women's Health</h4>
+        <p>Wellness exams, pap, hormonal &amp; reproductive care, menopause management.</p>
+        <span class="arrow">Annual + beyond →</span>
+      </a>
+
+      <a href="services-mens.html" class="service-tile">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="14" r="6"/><path d="M14 10l6-6M16 4h4v4"/></svg>
+        <h4>Men's Health</h4>
+        <p>Annual physicals, T-levels, cardiovascular screening, prostate &amp; preventive labs.</p>
+        <span class="arrow">Get the labs →</span>
+      </a>
+
+      <a href="services-weight.html" class="service-tile">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18l-2 14H5L3 6z"/><path d="M9 10v6M15 10v6M3 6V4h18v2"/></svg>
+        <h4>Weight Loss</h4>
+        <p>Physician-supervised plans. GLP-1 medications, lifestyle coaching, monthly check-ins.</p>
+        <span class="arrow">Start a plan →</span>
+      </a>
+
+      <a href="services-virtual.html" class="service-tile">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M22 8l-6 4 6 4V8z"/></svg>
+        <h4>Virtual Visits</h4>
+        <p>See a physician from the couch. Most insurance accepted. 7 days a week.</p>
+        <span class="arrow">Book virtual →</span>
+      </a>
+
+      <a href="services-labs.html" class="service-tile">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2v8L4 20a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-10V2"/><path d="M8 2h8"/></svg>
+        <h4>Labs &amp; X-Ray</h4>
+        <p>On-site diagnostics with same-visit results. CMP, CBC, lipid, A1c, X-ray, EKG.</p>
+        <span class="arrow">What we test →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- DARK CTA -->
+<section class="section dark">
+  <div class="container" style="text-align: center;">
+    <span class="eyebrow no-line" style="color: rgba(251,247,236,0.6); justify-content: center; display: inline-flex;">Not sure what you need?</span>
+    <h2 class="display-l" style="color: var(--paper); margin-top: 16px;">Tell us what's <em style="color: var(--mustard); font-style: normal; font-weight: 700;">going on.</em></h2>
+    <p class="lede" style="color: rgba(251,247,236,0.7); margin: 24px auto 32px;">Sore throat? Twisted ankle? Time for your annual? Start here and we'll route you to the right care — urgent, primary, or virtual — in under 30 seconds.</p>
+    <a href="tel:+19724424700" class="btn btn-accent" style="background: var(--mustard); color: var(--ink);">Call (972) 442-4700
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ms-footer">
+  <div class="ms-footer-grid">
+    <div>
+      <div class="ms-logo" style="margin-bottom: 16px;">
+        <img src="assets/medstar-logo.png" alt="MedStar Family Care" style="height: 64px; filter: brightness(1.1) drop-shadow(0 0 0.5px rgba(255,255,255,0.3));"/>
+      </div>
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.5; max-width: 280px;">Family-owned urgent &amp; primary care, serving Murphy, Little Elm, and the rest of North Texas since 2014.</p>
+    </div>
+    <div>
+      <h4>Care</h4>
+      <ul>
+        <li><a href="services-urgent.html">Urgent Care</a></li>
+        <li><a href="services-primary.html">Primary Care</a></li>
+        <li><a href="services-pediatric.html">Pediatrics</a></li>
+        <li><a href="services-womens.html">Women's Health</a></li>
+        <li><a href="services-virtual.html">Virtual Visits</a></li>
+        <li><a href="services-labs.html">Labs &amp; X-Ray</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="patient-info.html">Forms &amp; intake</a></li>
+        <li><a href="patient-info.html#insurance">Insurance</a></li>
+        <li><a href="patient-info.html#billing">Billing &amp; pay</a></li>
+        <li><a href="patient-info.html#portal">Patient portal</a></li>
+        <li><a href="patient-info.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About</h4>
+      <ul>
+        <li><a href="about.html">Our story</a></li>
+        <li><a href="providers.html">Providers</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit us</h4>
+      <ul style="font-family: var(--display); font-size: 17px; line-height: 1.4; letter-spacing: -0.01em;">
+        <li style="margin-bottom: 18px;">
+          <strong style="color: var(--paper); font-weight: 700;">Murphy</strong><br/>
+          <span style="font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,0.6);">601 E FM 544 #400<br/>(972) 442-4700</span>
+        </li>
+        <li>
+          <strong style="color: var(--paper); font-weight: 700;">Little Elm</strong><br/>
+          <span style="font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,0.6);">2700 FM 423 #200<br/>(214) 248-8400</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="ms-footer-bottom">
+    <span>© 2026 MedStar &amp; Co. · TX Lic. #M44892</span>
+    <span style="display: flex; gap: 24px;">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">HIPAA</a>
+      <a href="#">Notices</a>
+    </span>
+  </div>
+</footer>
+
+<script src="scripts/mobile-nav.js" defer></script>
+</body>
+</html>
