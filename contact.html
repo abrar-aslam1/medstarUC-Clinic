@@ -151,8 +151,9 @@
       <p style="color: var(--ink-2); margin: 0;">We'll get back to you within one business day. For faster help, call us at <a href="tel:+19724424700" style="color: var(--ms-blue-deep); font-weight: 600;">(972) 442-4700</a>.</p>
     </div>
 
-    <form id="contact-form-el" name="contact" method="POST" data-netlify="true" novalidate>
+    <form id="contact-form-el" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
       <input type="hidden" name="form-name" value="contact">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
       <div class="form-grid">
         <div class="field">
           <label for="c-name">Name <span style="color: var(--ms-red);">*</span></label>
