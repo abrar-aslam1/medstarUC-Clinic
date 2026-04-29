@@ -19,4 +19,6 @@
   <url><loc>https://medstaruc.com/contact.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://medstaruc.com/careers.html</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://medstaruc.com/services.html</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://medstaruc.com/privacy.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://medstaruc.com/terms.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
 </urlset>

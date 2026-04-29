@@ -32,7 +32,30 @@
       "Skill(update-config)",
       "Skill(update-config:*)",
       "Bash(grep -rl 'href=\"#\" style=\"color: var\\(--mustard\\);\">Patient portal' *.html)",
-      "Bash(xargs sed *)"
+      "Bash(xargs sed *)",
+      "Bash(unzip -o /Users/abraraslam/Downloads/seo-webmaster.skill)",
+      "Bash(ls /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/*.xml /Users/abraraslam/MedstarUC-codebase/medstarUC-Clinic/robots.txt)",
+      "Bash(grep -n \"<title>\" *.html)",
+      "Bash(grep -n 'meta name=\"description\"' *.html)",
+      "Bash(grep -n 'application/ld+json' *.html)",
+      "Bash(grep -n 'canonical' *.html)",
+      "Bash(grep -n 'og:' *.html)",
+      "Bash(grep -n 'twitter:' *.html)",
+      "Bash(grep -n '<h1' *.html)",
+      "Bash(grep -c '<h1\\\\|<h2\\\\|<h3\\\\|<h4' *.html)",
+      "Bash(grep -n 'alt=' *.html)",
+      "Bash(grep -n '<img' *.html)",
+      "Bash(grep -n '<img[^>]*alt=\"\"' *.html)",
+      "Bash(grep -n '<img[^>]*>' *.html)",
+      "Bash(grep -n 'href.*\\\\.html\\\\|href=\"./\"' *.html)",
+      "Bash(grep -n 'favicon' *.html)",
+      "Bash(grep -n 'noindex\\\\|nofollow\\\\|robots' *.html)",
+      "Bash(du *)",
+      "Bash(grep -l 'rel=\"canonical\"' *.html)",
+      "Bash(grep -l 'og:title' *.html)",
+      "Bash(grep -l 'application/ld+json' *.html)",
+      "Bash(git commit *)",
+      "Bash(grep *)"
     ]
   }
 }
