@@ -98,7 +98,7 @@ html[data-direction="civic"] .ticker-track .star {
 html[data-direction="civic"] .hero {
   background-image:
     linear-gradient(165deg, rgba(27,91,168,0.55) 0%, rgba(15,61,117,0.7) 60%, rgba(10,40,72,0.8) 100%),
-    url("https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1800&q=85") !important;
+    url("../assets/hero-clinic.webp") !important;
   background-size: cover !important;
   background-position: center !important;
   background-blend-mode: multiply, normal !important;
