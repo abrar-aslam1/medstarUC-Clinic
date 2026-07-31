@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# UPDATE: Replace https://medstaruc.com with your live domain before launch
-Sitemap: https://medstaruc.com/sitemap.xml
+Sitemap: https://www.medstaruc.com/sitemap.xml

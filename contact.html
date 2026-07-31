@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — MedStar &amp; Co. Family Care</title>
 <meta name="description" content="Contact MedStar Family Care in Murphy or Little Elm, TX. Call, email, or stop by.">
-<link rel="canonical" href="https://medstaruc.com/contact.html">
+<link rel="canonical" href="https://www.medstaruc.com/contact.html">
 <link rel="icon" href="assets/medstar-logo.png" type="image/png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MedStar Family Care">
 <meta property="og:title" content="Contact — MedStar &amp; Co. Family Care">
 <meta property="og:description" content="Contact MedStar Family Care in Murphy or Little Elm, TX. Call, email, or stop by.">
-<meta property="og:url" content="https://medstaruc.com/contact.html">
-<meta property="og:image" content="https://medstaruc.com/assets/locations/murphy-exterior.jpg">
+<meta property="og:url" content="https://www.medstaruc.com/contact.html">
+<meta property="og:image" content="https://www.medstaruc.com/assets/locations/murphy-exterior.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact — MedStar &amp; Co. Family Care">
 <meta name="twitter:description" content="Contact MedStar Family Care in Murphy or Little Elm, TX. Call, email, or stop by.">
-<meta name="twitter:image" content="https://medstaruc.com/assets/locations/murphy-exterior.jpg">
+<meta name="twitter:image" content="https://www.medstaruc.com/assets/locations/murphy-exterior.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
@@ -121,7 +121,8 @@
       </div>
     </div>
     <div>
-      <h3 style="font-family: var(--display); font-size: 28px; margin: 0 0 24px;">By email</h3>
+      <h3 style="font-family: var(--display); font-size: 28px; margin: 0 0 8px;">By email</h3>
+      <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin: 0 0 20px;">Email isn't secure. For anything involving your health record, use the <a href="https://mycw143.ecwcloud.com/portal19964/jsp/100mp/login_otp.jsp" target="_blank" rel="noopener" style="color: var(--ms-blue-deep); font-weight: 600;">patient portal</a> instead.</p>
       <div style="display: grid; gap: 20px;">
         <div>
           <h6 style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 4px;">General questions</h6>
@@ -144,7 +145,13 @@
 <section class="section paper" id="contact-form">
   <div class="container" style="max-width: 760px;">
     <span class="eyebrow">Send a message</span>
-    <h2 style="font-family: var(--display); font-size: clamp(32px, 4vw, 52px); letter-spacing: -0.02em; margin: 12px 0 40px; line-height: 1.05;">Prefer to write it down?</h2>
+    <h2 style="font-family: var(--display); font-size: clamp(32px, 4vw, 52px); letter-spacing: -0.02em; margin: 12px 0 24px; line-height: 1.05;">Prefer to write it down?</h2>
+
+    <!-- PHI notice: this form is not a HIPAA-secure channel. -->
+    <div style="border-left: 3px solid var(--ms-red); background: rgba(0,0,0,0.025); padding: 20px 24px; margin: 0 0 36px;">
+      <h6 style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ms-red); margin: 0 0 8px;">Please don't send medical information</h6>
+      <p style="font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0;">This form is for general questions only — it is <strong>not</strong> a secure channel and is not protected by HIPAA. Please don't include symptoms, diagnoses, test results, medications, insurance ID numbers, your date of birth, or your Social Security number. For anything about your care or records, use the <a href="https://mycw143.ecwcloud.com/portal19964/jsp/100mp/login_otp.jsp" target="_blank" rel="noopener" style="color: var(--ms-blue-deep); font-weight: 600;">patient portal</a> or call us at <a href="tel:+19724424700" style="color: var(--ms-blue-deep); font-weight: 600;">(972) 442-4700</a> (Murphy) or <a href="tel:+12142488400" style="color: var(--ms-blue-deep); font-weight: 600;">(214) 248-8400</a> (Little Elm). If this is an emergency, call 911.</p>
+    </div>
 
     <div id="contact-success" style="display: none; padding: 32px; background: var(--ms-blue-soft); border: 1px solid var(--ms-blue); margin-bottom: 32px;">
       <h3 style="font-family: var(--display); font-size: 24px; margin: 0 0 8px; color: var(--ms-blue-deep);">Got it — thanks.</h3>
@@ -177,14 +184,15 @@
         </div>
         <div class="field full">
           <label for="c-message">Message <span style="color: var(--ms-red);">*</span></label>
-          <textarea id="c-message" name="message" placeholder="How can we help?" required></textarea>
+          <textarea id="c-message" name="message" placeholder="Hours, directions, insurance we accept, scheduling — general questions only." required></textarea>
+          <p style="font-size: 12.5px; color: var(--ink-soft); margin: 8px 0 0;">No medical details, please — see the note above.</p>
         </div>
       </div>
       <div style="margin-top: 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
         <button type="submit" id="contact-submit" class="btn btn-accent">Send message
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </button>
-        <p style="font-size: 13px; color: var(--ink-soft); margin: 0;">We'll reply within one business day.</p>
+        <p style="font-size: 13px; color: var(--ink-soft); margin: 0;">We'll reply within one business day. By sending this, you agree we may contact you by phone or email about your question — see our <a href="privacy.html" style="color: var(--ms-blue-deep);">Privacy Policy</a>.</p>
       </div>
     </form>
   </div>
@@ -276,7 +284,8 @@
       submitBtn.textContent = 'Sending…';
       var formData = new FormData(form);
       fetch('/', { method: 'POST', body: formData })
-        .then(function () {
+        .then(function (res) {
+          if (!res.ok) throw new Error('Submission failed: ' + res.status);
           form.style.display = 'none';
           success.style.display = 'block';
           success.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -291,7 +300,7 @@
 </script>
 <script src="scripts/mobile-nav.js" defer></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://medstaruc.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://medstaruc.com/contact.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.medstaruc.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://www.medstaruc.com/contact.html"}]}
 </script>
 </body>
 </html>
