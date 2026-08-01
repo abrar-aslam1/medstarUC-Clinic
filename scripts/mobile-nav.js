@@ -66,6 +66,8 @@
 
           var toggle = document.createElement('button');
           toggle.className = 'ms-mobile-sub-toggle';
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', topText + ' submenu');
           toggle.innerHTML =
             '<a href="' + topHref + '" class="ms-mobile-sub-link">' + topText + '</a>' +
             '<span class="ms-mobile-chevron" aria-hidden="true">▾</span>';
@@ -155,8 +157,13 @@
         // close all
         menu.querySelectorAll('.ms-mobile-has-sub.is-open').forEach(function (el) {
           el.classList.remove('is-open');
+          var t = el.querySelector('.ms-mobile-sub-toggle');
+          if (t) t.setAttribute('aria-expanded', 'false');
         });
-        if (!wasOpen) parentLi.classList.add('is-open');
+        if (!wasOpen) {
+          parentLi.classList.add('is-open');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
         e.preventDefault();
       }
     });
