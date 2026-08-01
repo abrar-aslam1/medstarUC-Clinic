@@ -1,0 +1,29 @@
+/* Self-hosted Inter Tight + JetBrains Mono, latin subset.
+   Both SIL Open Font License. Sourced from the Google Fonts CSS for
+   Inter+Tight:wght@400;500;600;700 and JetBrains+Mono:wght@400;500.
+
+   Google serves one variable file per family and lists a separate
+   @font-face per weight; declaring the axis range instead means one
+   file covers every weight we use, so a page fetches 2 files not 6.
+
+   latin-ext is omitted deliberately: the only characters this site uses
+   outside the latin range are arrows and geometric shapes, which no
+   Google subset covers -- they fall back to a system font regardless. */
+
+@font-face {
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(../assets/fonts/inter-tight-var-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(../assets/fonts/jetbrains-mono-var-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
