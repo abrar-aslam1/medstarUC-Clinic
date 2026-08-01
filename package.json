@@ -1,5 +1,9 @@
 {
   "name": "medstaruc-clinic",
   "version": "1.0.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "check": "node build.js --check"
+  }
 }
