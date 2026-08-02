@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Node — package.json only carries the build scripts, but keep this honest
+node_modules/
+npm-debug.log*
+
+# Netlify CLI
+.netlify/
+
+# Per-developer Claude Code settings. .claude/settings.json and
+# .claude/skills/ are shared and stay tracked; only the .local file is yours.
+.claude/settings.local.json
