@@ -652,15 +652,14 @@ em.script { font-family: var(--script); font-style: normal; font-weight: 600; }
 .ms-mobile-links > li > a:hover { color: var(--ms-red); }
 
 /* Sub-menu toggle row */
+/* Layout row only — the link and the expand button inside it are the
+   interactive parts, so this carries no cursor of its own. */
 .ms-mobile-sub-toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 18px 0;
-  background: none;
-  border: none;
-  cursor: pointer;
   text-align: left;
   gap: 8px;
 }
@@ -680,6 +679,12 @@ em.script { font-family: var(--script); font-style: normal; font-weight: 600; }
   flex-shrink: 0;
   padding: 6px;
   cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  /* the glyph used to be a <span> inside a <button>, so it inherited the
+     UA's line-height:normal -- keep that so the row height is unchanged */
+  line-height: normal;
 }
 .ms-mobile-has-sub.is-open .ms-mobile-chevron {
   transform: rotate(180deg);

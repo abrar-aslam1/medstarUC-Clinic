@@ -50,7 +50,7 @@
       mobileUl.className = 'ms-mobile-links';
 
       var items = desktopUl.querySelectorAll(':scope > li');
-      items.forEach(function (li) {
+      items.forEach(function (li, index) {
         var mobileLi = document.createElement('li');
         var hasDropdown = li.classList.contains('ms-nav-has-menu');
 
@@ -64,16 +64,34 @@
 
           mobileLi.className = 'ms-mobile-has-sub';
 
-          var toggle = document.createElement('button');
+          // The row is a plain container: a link to the section, and a
+          // separate button that expands the submenu. Nesting the <a>
+          // inside a <button> is invalid and leaves assistive tech with
+          // no clear way to express "link inside button".
+          var subId = 'ms-mobile-sub-' + index;
+
+          var toggle = document.createElement('div');
           toggle.className = 'ms-mobile-sub-toggle';
-          toggle.setAttribute('aria-expanded', 'false');
-          toggle.setAttribute('aria-label', topText + ' submenu');
-          toggle.innerHTML =
-            '<a href="' + topHref + '" class="ms-mobile-sub-link">' + topText + '</a>' +
-            '<span class="ms-mobile-chevron" aria-hidden="true">▾</span>';
+
+          var topA = document.createElement('a');
+          topA.className = 'ms-mobile-sub-link';
+          topA.href = topHref;
+          topA.textContent = topText;
+
+          var chevron = document.createElement('button');
+          chevron.type = 'button';
+          chevron.className = 'ms-mobile-chevron';
+          chevron.setAttribute('aria-expanded', 'false');
+          chevron.setAttribute('aria-controls', subId);
+          chevron.setAttribute('aria-label', topText + ' submenu');
+          chevron.innerHTML = '<span aria-hidden="true">▾</span>';
+
+          toggle.appendChild(topA);
+          toggle.appendChild(chevron);
 
           var subUl = document.createElement('ul');
           subUl.className = 'ms-mobile-sub';
+          subUl.id = subId;
 
           if (dropdown) {
             var subLinks = dropdown.querySelectorAll('a');
@@ -146,23 +164,23 @@
 
     closeBtn.addEventListener('click', closeMenu);
 
-    // Sub-accordion toggle (chevron click only, not the link)
+    // Sub-accordion toggle. The chevron is its own button now, so a click
+    // on the sibling link falls through to normal navigation.
     menu.addEventListener('click', function (e) {
       var chevron = e.target.closest('.ms-mobile-chevron');
       if (chevron) {
-        var toggle = chevron.closest('.ms-mobile-sub-toggle');
-        if (!toggle) return;
-        var parentLi = toggle.closest('.ms-mobile-has-sub');
+        var parentLi = chevron.closest('.ms-mobile-has-sub');
+        if (!parentLi) return;
         var wasOpen = parentLi.classList.contains('is-open');
         // close all
         menu.querySelectorAll('.ms-mobile-has-sub.is-open').forEach(function (el) {
           el.classList.remove('is-open');
-          var t = el.querySelector('.ms-mobile-sub-toggle');
-          if (t) t.setAttribute('aria-expanded', 'false');
+          var c = el.querySelector('.ms-mobile-chevron');
+          if (c) c.setAttribute('aria-expanded', 'false');
         });
         if (!wasOpen) {
           parentLi.classList.add('is-open');
-          toggle.setAttribute('aria-expanded', 'true');
+          chevron.setAttribute('aria-expanded', 'true');
         }
         e.preventDefault();
       }
