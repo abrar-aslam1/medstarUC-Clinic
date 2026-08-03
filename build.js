@@ -26,10 +26,9 @@ const DEFAULTS = {
   phone: '(972) 442-4700',
   phoneTel: '+19724424700',
 };
-const PAGES = {
-  // Little Elm runs its own line; the nav CTA should reach that clinic.
-  'location-little-elm.html': { phone: '(214) 248-8400', phoneTel: '+12142488400' },
-};
+// Both clinics are reached on the single published line. If Little Elm ever
+// gets its own number, add it here and the nav CTA follows.
+const PAGES = {};
 
 function render(template, vars) {
   return template.replace(/\{\{(\w+)\}\}/g, (match, key) => {
