@@ -2,15 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.medstaruc.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.medstaruc.com/services-urgent.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.medstaruc.com/services-primary.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/location-murphy.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/location-little-elm.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/services-weight.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.medstaruc.com/services-virtual.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/services-pediatric.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/services-womens.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/services-mens.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.medstaruc.com/services-labs.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/providers.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/patient-info.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/locations.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
