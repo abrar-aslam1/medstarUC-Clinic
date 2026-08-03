@@ -10,7 +10,7 @@
     background-color: #0F3D75;
     background-image:
       linear-gradient(165deg, rgba(27,91,168,0.55) 0%, rgba(15,61,117,0.7) 60%, rgba(10,40,72,0.8) 100%),
-      url("assets/hero-clinic.webp");
+      url("../assets/hero-clinic.webp");
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply, normal;
