@@ -1,6 +1,9 @@
 [build]
   publish = "."
-  command = ""
+  # Validates only -- never rewrites. The generated pages are committed, so
+  # this serves them as-is; it just refuses to deploy if any page has
+  # drifted from partials/. A failure leaves the previous deploy live.
+  command = "npm run check"
 
 [build.environment]
   NODE_VERSION = "20"

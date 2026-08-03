@@ -1,0 +1,22 @@
+#!/bin/sh
+# Refuse a commit whose pages have drifted from partials/.
+#
+# The shared topbar, nav and footer are stitched into every page by
+# build.js. Editing a page's generated region directly, or editing a
+# partial without rebuilding, leaves the 21 pages inconsistent -- which
+# is how seven of them ended up without a footer credit.
+#
+# Enabled by: git config core.hooksPath .githooks
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "pre-commit: node not found, skipping template drift check" >&2
+  exit 0
+fi
+
+if ! node build.js --check; then
+  echo "" >&2
+  echo "pre-commit: pages are out of sync with partials/." >&2
+  echo "  Run 'npm run build', review the result, and stage it." >&2
+  echo "  To bypass this check once: git commit --no-verify" >&2
+  exit 1
+fi
