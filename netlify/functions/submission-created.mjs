@@ -19,19 +19,22 @@
  *
  * Required environment variables:
  *   RESEND_API_KEY     Resend API key
+ *   NOTIFY_FROM        verified Resend sender, e.g. "noreply@example.com"
  *   NOTIFY_TO          default recipients; comma-separated for more than
  *                      one. Because the hosted copy of an uploaded file is
  *                      deleted after sending, keeping a second archive
  *                      address here is what guards against a lost email.
+ *   ADMIN_API_TOKEN    Netlify personal access token, used only to delete
+ *                      the submission after the email is confirmed sent.
+ *                      Deliberately not called NETLIFY_API_TOKEN — the
+ *                      dashboard refuses to save names starting NETLIFY_.
  *
  * Optional, per form (see FORMS below):
  *   NOTIFY_TO_CONTACT  overrides NOTIFY_TO for the contact form only
- *   NOTIFY_FROM        verified Resend sender, e.g. "careers@medstaruc.com"
- *   NETLIFY_API_TOKEN  personal access token, used only to delete the
- *                      submission after the email is confirmed sent
  *
- * If any of these is missing the function logs and exits without deleting,
- * so a misconfiguration loses the notification but never the application.
+ * If any required variable is missing the function logs and exits before
+ * sending, so a misconfiguration loses the notification but never the
+ * submission itself — Netlify keeps the record either way.
  */
 
 const MAX_ATTACHMENT_BYTES = 20 * 1024 * 1024; // Resend's hard limit is 40MB total
@@ -74,13 +77,13 @@ export const handler = async (event) => {
     heading: `New ${payload.form_name || 'form'} submission`,
   };
 
-  const { RESEND_API_KEY, NOTIFY_TO, NOTIFY_FROM, NETLIFY_API_TOKEN } =
+  const { RESEND_API_KEY, NOTIFY_TO, NOTIFY_FROM, ADMIN_API_TOKEN } =
     process.env;
   const missing = Object.entries({
     RESEND_API_KEY,
     NOTIFY_TO,
     NOTIFY_FROM,
-    NETLIFY_API_TOKEN,
+    ADMIN_API_TOKEN,
   })
     .filter(([, v]) => !v)
     .map(([k]) => k);
@@ -188,7 +191,7 @@ export const handler = async (event) => {
       `https://api.netlify.com/api/v1/submissions/${payload.id}`,
       {
         method: 'DELETE',
-        headers: { Authorization: `Bearer ${NETLIFY_API_TOKEN}` },
+        headers: { Authorization: `Bearer ${ADMIN_API_TOKEN}` },
       }
     );
     if (!del.ok) {
