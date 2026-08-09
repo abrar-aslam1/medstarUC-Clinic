@@ -8,6 +8,12 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Only one function: the careers form emails the resume as an attachment and
+# then deletes Netlify's public copy. See netlify/functions/submission-created.mjs
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # Security headers applied to every response.
 [[headers]]
   for = "/*"
