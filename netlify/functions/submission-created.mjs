@@ -1,12 +1,18 @@
 /**
- * Emails careers applications with the resume attached, then deletes the
- * hosted copy.
+ * Emails every form submission through Resend, attaching any uploaded file
+ * and then deleting the hosted copy of that file.
  *
  * Netlify's built-in notification can only put a *link* to an uploaded file
  * in the email — the file itself is stored on a public CloudFront URL that
  * anyone holding the link can read. This function fetches the file, sends it
  * as a real attachment through Resend, and then deletes the submission from
  * Netlify so the public copy stops existing.
+ *
+ * Submissions with no file (the contact form) are emailed the same way but
+ * are NOT deleted: there is no public copy to clean up, so keeping the
+ * dashboard record costs nothing and leaves a second copy if the mail is
+ * lost. Deletion is strictly a cleanup for exposed files, not a filing
+ * policy.
  *
  * Fires automatically on every form submission (Netlify event function —
  * the filename is the event name; do not rename it).
@@ -27,6 +33,19 @@
 
 const MAX_ATTACHMENT_BYTES = 20 * 1024 * 1024; // Resend's hard limit is 40MB total
 
+// Subject/heading per form. Unknown forms still send, labelled by their raw
+// name, so adding a form to the site never silently drops its notifications.
+const FORMS = {
+  'careers-application': {
+    label: 'Careers application',
+    heading: 'New careers application',
+  },
+  contact: {
+    label: 'Contact form',
+    heading: 'New contact form submission',
+  },
+};
+
 const esc = (s) =>
   String(s ?? '')
     .replace(/&/g, '&amp;')
@@ -42,11 +61,10 @@ export const handler = async (event) => {
     return { statusCode: 400, body: 'bad payload' };
   }
 
-  // Only the careers form carries a file; the contact form keeps using
-  // Netlify's built-in notification.
-  if (payload.form_name !== 'careers-application') {
-    return { statusCode: 200, body: 'ignored' };
-  }
+  const form = FORMS[payload.form_name] || {
+    label: payload.form_name || 'Form',
+    heading: `New ${payload.form_name || 'form'} submission`,
+  };
 
   const { RESEND_API_KEY, NOTIFY_TO, NOTIFY_FROM, NETLIFY_API_TOKEN } =
     process.env;
@@ -113,18 +131,22 @@ export const handler = async (event) => {
         .map((a) => a.trim())
         .filter(Boolean),
       reply_to: data.email || undefined,
-      subject: `Careers application — ${data.fullName || 'no name given'}`,
+      subject: `${form.label} — ${
+        data.fullName || data.name || 'no name given'
+      }`,
       html: `
-        <h2 style="font-family:sans-serif;">New careers application</h2>
+        <h2 style="font-family:sans-serif;">${esc(form.heading)}</h2>
         <table style="font-family:sans-serif;font-size:14px;border-collapse:collapse;">${rows}</table>
         ${
           attachmentNote
             ? `<p style="font-family:sans-serif;color:#b00;">${esc(
                 attachmentNote
               )}</p>`
-            : `<p style="font-family:sans-serif;color:#666;font-size:13px;">Resume attached: ${esc(
-                resume?.filename || 'none'
+            : attachments.length
+            ? `<p style="font-family:sans-serif;color:#666;font-size:13px;">Attached: ${esc(
+                resume.filename
               )}</p>`
+            : ''
         }
       `,
       attachments,
@@ -152,9 +174,9 @@ export const handler = async (event) => {
     if (!del.ok) {
       console.error(`submission-created: delete failed ${del.status}`);
     }
-  } else {
+  } else if (resume?.url) {
     console.warn(
-      'submission-created: nothing attached, keeping submission so the file is not orphaned'
+      'submission-created: file could not be attached, keeping submission so it is not orphaned'
     );
   }
 
