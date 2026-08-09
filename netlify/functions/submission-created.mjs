@@ -19,10 +19,13 @@
  *
  * Required environment variables:
  *   RESEND_API_KEY     Resend API key
- *   NOTIFY_TO          where applications are emailed; comma-separated for
- *                      more than one recipient. Because the hosted copy is
+ *   NOTIFY_TO          default recipients; comma-separated for more than
+ *                      one. Because the hosted copy of an uploaded file is
  *                      deleted after sending, keeping a second archive
  *                      address here is what guards against a lost email.
+ *
+ * Optional, per form (see FORMS below):
+ *   NOTIFY_TO_CONTACT  overrides NOTIFY_TO for the contact form only
  *   NOTIFY_FROM        verified Resend sender, e.g. "careers@medstaruc.com"
  *   NETLIFY_API_TOKEN  personal access token, used only to delete the
  *                      submission after the email is confirmed sent
@@ -43,6 +46,11 @@ const FORMS = {
   contact: {
     label: 'Contact form',
     heading: 'New contact form submission',
+    // The contact form is patient-facing. Despite the "don't send medical
+    // information" notice on the page, someone will eventually describe a
+    // condition in the message box, so these are kept off the consumer
+    // Gmail address and sent only to the Workspace one.
+    toEnv: 'NOTIFY_TO_CONTACT',
   },
 };
 
@@ -79,6 +87,20 @@ export const handler = async (event) => {
   if (missing.length) {
     console.error(`submission-created: missing env vars: ${missing.join(', ')}`);
     return { statusCode: 500, body: 'not configured' };
+  }
+
+  // A per-form override wins over NOTIFY_TO; an override set to an empty or
+  // whitespace-only string falls back rather than sending to nobody.
+  const override = form.toEnv ? (process.env[form.toEnv] || '').trim() : '';
+  const recipients = (override || NOTIFY_TO)
+    .split(',')
+    .map((a) => a.trim())
+    .filter(Boolean);
+  if (!recipients.length) {
+    console.error(
+      `submission-created: no recipients resolved for form "${payload.form_name}"`
+    );
+    return { statusCode: 500, body: 'no recipients' };
   }
 
   const data = payload.data || {};
@@ -127,9 +149,7 @@ export const handler = async (event) => {
     },
     body: JSON.stringify({
       from: NOTIFY_FROM,
-      to: NOTIFY_TO.split(',')
-        .map((a) => a.trim())
-        .filter(Boolean),
+      to: recipients,
       reply_to: data.email || undefined,
       subject: `${form.label} — ${
         data.fullName || data.name || 'no name given'
