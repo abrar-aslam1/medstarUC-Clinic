@@ -13,7 +13,10 @@
  *
  * Required environment variables:
  *   RESEND_API_KEY     Resend API key
- *   NOTIFY_TO          where applications are emailed
+ *   NOTIFY_TO          where applications are emailed; comma-separated for
+ *                      more than one recipient. Because the hosted copy is
+ *                      deleted after sending, keeping a second archive
+ *                      address here is what guards against a lost email.
  *   NOTIFY_FROM        verified Resend sender, e.g. "careers@medstaruc.com"
  *   NETLIFY_API_TOKEN  personal access token, used only to delete the
  *                      submission after the email is confirmed sent
@@ -106,7 +109,9 @@ export const handler = async (event) => {
     },
     body: JSON.stringify({
       from: NOTIFY_FROM,
-      to: [NOTIFY_TO],
+      to: NOTIFY_TO.split(',')
+        .map((a) => a.trim())
+        .filter(Boolean),
       reply_to: data.email || undefined,
       subject: `Careers application — ${data.fullName || 'no name given'}`,
       html: `
