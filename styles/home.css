@@ -418,6 +418,16 @@
   }
   .ins-cell img { max-width: 140px; max-height: 56px; width: auto; height: auto; object-fit: contain; }
   .ins-cell:hover { background: var(--bg-deep); }
+  /* Carriers we list but have no logo artwork for. Set in the display face so
+     the cell reads as a wordmark beside the real marks rather than as a label. */
+  .ins-cell .ins-text {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    line-height: 1.1;
+  }
 
   /* ============= PROVIDERS ============= */
   .providers-grid {
