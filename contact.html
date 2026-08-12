@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -- loader and custom events live in scripts/analytics.js -->
+<script src="scripts/analytics.js" defer></script>
 <title>Contact — MedStar Family Care</title>
 <meta name="description" content="Contact MedStar Family Care in Murphy or Little Elm, TX. Call, email, or stop by.">
 <link rel="canonical" href="https://www.medstaruc.com/contact.html">
@@ -279,6 +281,14 @@
       fetch('/', { method: 'POST', body: formData })
         .then(function (res) {
           if (!res.ok) throw new Error('Submission failed: ' + res.status);
+          // Netlify accepted it — this is the conversion. Location only;
+          // never pass the name, email, or message into analytics.
+          if (window.msTrack) {
+            window.msTrack('contact_form_submit', {
+              form_name: 'contact',
+              preferred_location: formData.get('location') || 'none',
+            });
+          }
           form.style.display = 'none';
           success.style.display = 'block';
           success.scrollIntoView({ behavior: 'smooth', block: 'center' });

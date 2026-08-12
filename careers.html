@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -- loader and custom events live in scripts/analytics.js -->
+<script src="scripts/analytics.js" defer></script>
 <title>Careers — MedStar Family Care</title>
 <meta name="description" content="Join the MedStar team in Murphy or Little Elm, TX. Family-owned clinic — no corporate layer. Real visit lengths, predictable hours, room to grow.">
 <link rel="canonical" href="https://www.medstaruc.com/careers.html">
@@ -349,6 +351,14 @@
       fetch('/', { method: 'POST', body: formData })
         .then(function (res) {
           if (!res.ok) throw new Error('Submission failed: ' + res.status);
+          // Applied successfully. There is no role field -- applicants name
+          // the role inside the free-text message, so nothing from this form
+          // is safe to forward. Count the conversion and stop there.
+          if (window.msTrack) {
+            window.msTrack('careers_application_submit', {
+              form_name: 'careers-application',
+            });
+          }
           form.style.display = 'none';
           success.classList.add('visible');
           window.scrollTo({ top: success.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
