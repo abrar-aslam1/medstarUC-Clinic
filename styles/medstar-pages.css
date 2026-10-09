@@ -643,3 +643,15 @@
   .postcard-actions { flex-direction: column; }
   .postcard-actions .btn { width: 100%; justify-content: center; }
 }
+
+/* ============= LOCATION PHOTO GALLERY ============= */
+/* Column flow keeps each photo at its native aspect ratio (mixed portrait/landscape). */
+.gallery-grid { column-count: 3; column-gap: 16px; }
+.gallery-item { margin: 0 0 16px; break-inside: avoid; background: var(--ink); }
+.gallery-item img { width: 100%; height: auto; display: block; }
+.gallery-item figcaption {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase;
+  color: var(--paper); padding: 8px 12px;
+}
+@media (max-width: 900px) { .gallery-grid { column-count: 2; } }
+@media (max-width: 480px) { .gallery-grid { column-count: 1; } }
