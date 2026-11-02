@@ -14,6 +14,8 @@
   <url><loc>https://www.medstaruc.com/locations.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/about.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/contact.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.medstaruc.com/blog.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.medstaruc.com/blog-flu-season-urgent-care-er-or-doctor.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/careers.html</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/services.html</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.medstaruc.com/privacy.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
