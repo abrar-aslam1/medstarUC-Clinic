@@ -6,18 +6,18 @@
 <!-- Google tag (gtag.js) -- loader and custom events live in scripts/analytics.js -->
 <script src="scripts/analytics.js" defer></script>
 <title>Murphy Clinic — MedStar Family Care</title>
-<meta name="description" content="MedStar Family Care Murphy — 601 E FM 544, Suite 400, Murphy TX 75094. Open Mon–Sat. Walk-in urgent care and primary care.">
+<meta name="description" content="MedStar Family Care Murphy — 601 E FM 544, Suite 400, Murphy TX 75094. Open 7 days. Walk-in urgent care and primary care.">
 <link rel="canonical" href="https://www.medstaruc.com/location-murphy.html">
 <link rel="icon" href="assets/medstar-logo.png" type="image/png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MedStar Family Care">
 <meta property="og:title" content="Murphy Clinic — MedStar Family Care">
-<meta property="og:description" content="MedStar Family Care Murphy — 601 E FM 544, Suite 400, Murphy TX 75094. Open Mon–Sat. Walk-in urgent care and primary care.">
+<meta property="og:description" content="MedStar Family Care Murphy — 601 E FM 544, Suite 400, Murphy TX 75094. Open 7 days. Walk-in urgent care and primary care.">
 <meta property="og:url" content="https://www.medstaruc.com/location-murphy.html">
 <meta property="og:image" content="https://www.medstaruc.com/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Murphy Clinic — MedStar Family Care">
-<meta name="twitter:description" content="MedStar Family Care Murphy — 601 E FM 544, Suite 400, Murphy TX 75094. Open Mon–Sat. Walk-in urgent care and primary care.">
+<meta name="twitter:description" content="MedStar Family Care Murphy — 601 E FM 544, Suite 400, Murphy TX 75094. Open 7 days. Walk-in urgent care and primary care.">
 <meta name="twitter:image" content="https://www.medstaruc.com/assets/og-image.jpg">
 <link rel="preload" href="assets/fonts/inter-tight-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles/fonts.css">
@@ -32,7 +32,7 @@
 <!-- TOP BAR -->
 <!-- build:topbar -->
 <div class="ms-topbar" style="background: var(--ms-blue-deep); color: var(--paper); padding: 8px var(--gutter); font-size: 12px; display: flex; justify-content: space-between; align-items: center; letter-spacing: 0.04em; gap: 24px; flex-wrap: wrap;">
-  <span style="white-space: nowrap;">Murphy &amp; Little Elm, TX · Open Mon–Sat in Murphy</span>
+  <span style="white-space: nowrap;">Murphy &amp; Little Elm, TX · Open 7 days in Murphy</span>
   <span style="display:flex; gap: 24px; flex-wrap: wrap; white-space: nowrap;">
     <span><span style="color: var(--mustard);">●</span> 2 locations</span>
     <a href="https://mycw143.ecwcloud.com/portal19964/jsp/100mp/login_otp.jsp" target="_blank" rel="noopener" style="color: var(--mustard);">Patient portal →</a>
@@ -103,7 +103,7 @@
   </div>
   <div class="stat-row" style="max-width: var(--container); margin: 56px auto 0;">
     <div class="stat-cell"><h6>Weekdays</h6><strong>9a — 6p</strong><span>Monday through Friday</span></div>
-    <div class="stat-cell"><h6>Saturdays</h6><strong>9a — 3p</strong><span>Closed Sunday</span></div>
+    <div class="stat-cell"><h6>Weekends</h6><strong>9a — 5p</strong><span>Open Saturday &amp; Sunday</span></div>
     <div class="stat-cell"><h6>Walk-ins</h6><strong>Welcome</strong><span>No appointment needed</span></div>
     <div class="stat-cell"><h6>Phone</h6><strong>(972) 442-4700</strong><span>Front desk</span></div>
   </div>
@@ -142,7 +142,7 @@
       <a href="services-urgent.html" class="service-tile" style="min-height: 180px;">
         <span class="tile-num">01 / URGENT</span>
         <h4 style="font-size: 22px;">Walk-in urgent care</h4>
-        <p style="font-size: 14px;">Open 9a–6p weekdays, 9a–3p Saturdays. Closed Sunday. No appointment needed.</p>
+        <p style="font-size: 14px;">Open 9a–6p weekdays, 9a–5p weekends. No appointment needed.</p>
         <span class="arrow">Learn more →</span>
       </a>
       <a href="services-primary.html" class="service-tile" style="min-height: 180px;">
@@ -238,8 +238,8 @@
         <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 6px;"><span>Wednesday</span><strong style="font-weight: 500;">9a — 6p</strong></li>
         <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 6px;"><span>Thursday</span><strong style="font-weight: 500;">9a — 6p</strong></li>
         <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 6px;"><span>Friday</span><strong style="font-weight: 500;">9a — 6p</strong></li>
-        <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 6px;"><span>Saturday</span><strong style="font-weight: 500;">9a — 3p</strong></li>
-        <li style="display: flex; justify-content: space-between;"><span>Sunday</span><strong style="font-weight: 500; color: var(--ink-soft);">Closed</strong></li>
+        <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 6px;"><span>Saturday</span><strong style="font-weight: 500;">9a — 5p</strong></li>
+        <li style="display: flex; justify-content: space-between;"><span>Sunday</span><strong style="font-weight: 500;">9a — 5p</strong></li>
       </ul>
     </div>
     <div>
@@ -370,15 +370,9 @@
         },
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday"],
+          "dayOfWeek": ["Saturday", "Sunday"],
           "opens": "09:00",
-          "closes": "15:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Sunday"],
-          "opens": "00:00",
-          "closes": "00:00"
+          "closes": "17:00"
         }
       ],
       "medicalSpecialty": ["UrgentCare", "FamilyMedicine"]
